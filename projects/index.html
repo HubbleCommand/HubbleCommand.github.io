@@ -5,7 +5,7 @@ title: Sasha's Projects
 <h1>{{ page.title }}</h1>
 <ul class="posts">
 
-    {% for project in site.projposts %}
+    {% for project in site.projects %}
     <li><span>{{ project.date | date_to_string }}</span> » <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a></li>
     {% endfor %}
 </ul>

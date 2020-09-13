@@ -1,3 +1,7 @@
 theme: jekyll-theme-minimal
 name: Sasha Poirier, IT Goof
 markdown: kramdown
+
+collections:
+  projects:
+    output: true
