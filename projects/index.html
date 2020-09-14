@@ -4,8 +4,14 @@ title: Sasha's Projects
 ---
 <h1>{{ page.title }}</h1>
 <ul class="posts">
+    <p>An assortment of project's I've done.</p>
 
     {% for project in site.projects %}
-    <li><span>{{ project.date | date_to_string }}</span> » <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a></li>
+    <li><span>{{ project.categories}}</span> » <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a></li>
+    {% endfor %}
+
+    {% assign projects = collection.projects | sort: 'categories' %}
+    {% for project in projects %}
+        <h4>{{ project.title }}</h4>
     {% endfor %}
 </ul>
