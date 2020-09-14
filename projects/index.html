@@ -9,9 +9,4 @@ title: Sasha's Projects
     {% for project in site.projects %}
     <li><span>{{ project.categories}}</span> » <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a></li>
     {% endfor %}
-
-    {% assign projects = collection.projects | sort: 'categories' %}
-    {% for project in projects %}
-        <h4>{{ project.title }}</h4>
-    {% endfor %}
 </ul>
