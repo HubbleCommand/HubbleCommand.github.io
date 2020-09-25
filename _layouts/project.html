@@ -1,19 +1,28 @@
 ---
 layout: default
 ---
- <!-- Side navigation -->
- <div class="sidenav">
+<!-- Side navigation 
+<div class="sidenav">
     {% for project in site.projects %}
-    <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a>
+        <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a>
     {% endfor %}
-  </div>
+</div>-->
   
-  <!-- Page content -->
-  <div class="main">
+<!-- Page content 
+<div class="main">
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date_to_string }}</p>
+    <a class="meta">{{ page.date | date_to_string }}</a>
 
     <div class="post">
         {{ content }}
     </div>
-  </div> 
+</div> -->
+
+
+<h1>{{ page.title }}</h1>
+<p class="meta">{{ page.start-date }} to {{ page.end-date }}</p>
+<p class="meta tags">{{page.categories | array_to_sentence_string}}</p>
+
+<div class="post">
+  {{ content }}
+</div>

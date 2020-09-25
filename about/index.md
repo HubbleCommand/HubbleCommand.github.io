@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Sasha Poirier
+title: About Sasha Poirier
 ---
 <div class="blurb">
 	<h1>About me</h1>
-    <p>Canadian IT dude in Switzerland.</a></p>
+    <p>Canadian IT dude in Switzerland.</p>
 </div><!-- /.blurb -->

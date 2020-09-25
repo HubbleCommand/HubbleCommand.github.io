@@ -2,11 +2,34 @@
 layout: default
 title: Sasha's Projects
 ---
+<script src="{{ base.url | prepend: site.url }}/assets/js/category_menu.js"></script>
 <h1>{{ page.title }}</h1>
-<ul class="posts">
-    <p>An assortment of project's I've done.</p>
-
-    {% for project in site.projects %}
-    <li><span>{{ project.categories}}</span> » <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a></li>
+<label>Categories</label><br>
+<select style="width:100%;" multiple id="select-categories-projects" onchange="filterProjectsOnceChosen($(this).val())">
+    {% assign cats = site.projects | map: 'categories' | uniq  %}
+    {% for cat in cats %}
+        <option value="{{cat}}">{{cat}}</option>
     {% endfor %}
-</ul>
+</select>
+<br>
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <th>Project Title</th>
+                <th>Tags</th>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody id="project-list-to-filter">
+            {% assign projs = site.projects | sort: "date", "last" %}
+            {% for project in projs %}
+                <tr data-categories='{{project.categories | jsonify }}'>
+                    <th><a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a></th>
+                    <th><span> {{project.categories | array_to_sentence_string}}</span></th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

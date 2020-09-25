@@ -1,6 +1,10 @@
 theme: jekyll-theme-minimal
 name: Sasha Poirier, IT Goof
 markdown: kramdown
+theme: jekyll-theme-minimal
+exclude: [vendor]
+future: true  #LACKING THIS WAS WHY A LOT OF PAGES WERENT BEING GENERATED, THEY HAD DATES GREATER THAN THE CURRENT DATE!!!
+relative_permalinks: false 
 
 collections:
   projects:

@@ -2,9 +2,10 @@
 <html>
     <head>
         <title>{{ page.title }}</title>
-        <!-- link to main stylesheet -->
-        <link rel="stylesheet" type="text/css" href="/css/main.css">
-        <link rel="stylesheet" type="text/css" href="/css/project.css">
+        <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/main.css">
+        <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/project.css">
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
         <nav>
@@ -20,7 +21,7 @@
         
         {{ content }}
         
-        </div><!-- /.container -->
+        </div>
         <footer>
             <ul>
                 <li><a href="https://github.com/HubbleCommand">github.com/HubbleCommand</a></li>
