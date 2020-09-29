@@ -11,5 +11,5 @@ vendor/
 # Ignore other things
 #Gemfile
 #Gemfile.lock
-_drafts/
-*draft*
+#_drafts/
+#*draft*
