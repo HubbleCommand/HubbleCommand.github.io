@@ -9,7 +9,7 @@ _site/
 vendor/
 
 # Ignore other things
-Gemfile
-Gemfile.lock
+#Gemfile
+#Gemfile.lock
 _drafts/
 *draft*
