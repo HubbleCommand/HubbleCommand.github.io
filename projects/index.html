@@ -4,20 +4,20 @@ title: My Projects
 ---
 <!--<script src="{{ base.url | prepend: site.url }}/assets/js/category_menu.js"></script>-->
 <script src="/assets/js/category_menu.js"></script>
-<th>{{ page.title }}</th>
-<label>Categories</label><br>
+<h1>{{ page.title }}</h1>
+<h3>Categories</h3>
 <select style="width:100%;" multiple id="select-categories-projects" onchange="filterProjectsOnceChosen($(this).val())">
     {% assign cats = site.projects | map: 'categories' | uniq  %}
     {% for cat in cats %}
         <option value="{{cat}}">{{cat}}</option>
     {% endfor %}
 </select>
-<br><br>
+<h3>Projects</h3>
 <div>
     <table>
         <tbody>
             <tr>
-                <th>Project Title</th>
+                <th>Title</th>
                 <th>Tags</th>
             </tr>
         </tbody>
@@ -31,6 +31,10 @@ title: My Projects
                     <th><span> {{project.categories | array_to_sentence_string}}</span></th>
                 </tr>
             {% endfor %}
+            <tr id="project-list-end" style="display:none">
+                <td  colspan="2" class="listend" ><a>No projects found</a></td>
+                
+            </tr>
         </tbody>
     </table>
 </div>

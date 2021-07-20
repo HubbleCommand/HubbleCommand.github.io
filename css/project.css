@@ -38,6 +38,10 @@ td, th {
     padding: 8px;
 }
 
+.listend {
+    text-align:center
+}
+
 /*
 This is neat, but doesn't work with the filter
 tr:nth-child(even) {
