@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Sasha's Projects
+title: My Projects
 ---
 <!--<script src="{{ base.url | prepend: site.url }}/assets/js/category_menu.js"></script>-->
 <script src="/assets/js/category_menu.js"></script>
-<h1>{{ page.title }}</h1>
+<th>{{ page.title }}</th>
 <label>Categories</label><br>
 <select style="width:100%;" multiple id="select-categories-projects" onchange="filterProjectsOnceChosen($(this).val())">
     {% assign cats = site.projects | map: 'categories' | uniq  %}
@@ -12,7 +12,7 @@ title: Sasha's Projects
         <option value="{{cat}}">{{cat}}</option>
     {% endfor %}
 </select>
-<br>
+<br><br>
 <div>
     <table>
         <tbody>
