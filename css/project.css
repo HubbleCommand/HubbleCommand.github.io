@@ -50,3 +50,11 @@ tr:nth-child(even) {
 .meta.tags{
     color:purple;
 }
+
+.projtitle {
+    text-indent: 2em;
+    color:black;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.4em;
+}
