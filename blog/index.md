@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sasha's Blog
+title: Blog
 ---
 <h1>{{ page.title }}</h1>
 <ul class="posts">

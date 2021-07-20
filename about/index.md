@@ -1,8 +1,8 @@
 ---
 layout: default
-title: About Sasha Poirier
+title: About Me
 ---
 <div class="blurb">
-	<h1>About me</h1>
+	<h1>{{ page.title }}</h1>
     <p>Canadian IT dude in Switzerland.</p>
 </div><!-- /.blurb -->
