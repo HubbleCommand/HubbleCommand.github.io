@@ -1,6 +1,6 @@
 ---
 layout: default
-title: My Projects
+title: Projects
 ---
 <!--<script src="{{ base.url | prepend: site.url }}/assets/js/category_menu.js"></script>-->
 <script src="/assets/js/category_menu.js"></script>
@@ -15,15 +15,12 @@ title: My Projects
 <h3>Projects</h3>
 <div>
     <table>
-        <tbody>
+        <tbody id="project-list-to-filter">
             <tr>
                 <th>Title</th>
                 <th>Tags</th>
             </tr>
-        </tbody>
-    </table>
-    <table>
-        <tbody id="project-list-to-filter">
+
             {% assign projs = site.projects | sort: "date", "last" %}
             {% for project in projs %}
                 <tr data-categories='{{project.categories | jsonify }}'>
