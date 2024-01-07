@@ -5,6 +5,7 @@ categories: ["WebDev"]
 programming-languages: ["JS"]
 start-date : 2020-09-12
 end-date : NA
+last_modified_at : 2024-01-07
 ---
 
 This site is also a little project of mine to document my various exploits and projects that I do, mostly on the side. I do however document some of my larger Uni / Professional projects here.

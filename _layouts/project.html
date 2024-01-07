@@ -20,11 +20,19 @@ layout: default
 
 
 <h1>{{ page.title }}</h1>
-<p class="meta">{{ page.start-date }} to {{ page.end-date }}</p>
 <p class="meta tags">{{page.categories | array_to_sentence_string}}</p>
+<p class="meta">
+    {{ page.start-date }} 
+    {% if page.end-date %}
+        to {{ page.end-date }}
+    {% endif %}
+</p>
+{% if page.last_modified_at %}
+    <p class="meta tags">last modified {{page.last_modified_at}}</p>
+{% endif %}
 
 {{ content }}
 
 {% if page.tags %}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-{% endif %}
+{% endif %}{{ content }}
