@@ -1,4 +1,24 @@
+var set = new Set()
+
+function onCategoryClicked(category) {
+    if (set.has(category)){
+        set.delete(category)
+    } else {
+        set.add(category)
+    }
+    
+    filterProjectsOnceChosen(Array.from(set))
+}
+
 function filterProjectsOnceChosen(chosen){
+    $("#select-categories-projects").children().each(function(){
+        if (set.has(this.value)) {
+            this.classList.add("category-option-chosen")
+        } else {
+            this.classList.remove("category-option-chosen")
+        }
+    })
+
     if(chosen.length == 0){ //If nothing chosen, then show all projects
         $("#project-list-to-filter").children().each(function(){
             $(this).show();
@@ -27,7 +47,6 @@ function filterProjectsOnceChosen(chosen){
             }
         })
         if(filterResultCount > 0){
-            console.log("No results")
             $("#project-list-end").hide();
         } else {
             $("#project-list-end").show();
