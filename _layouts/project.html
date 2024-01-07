@@ -23,6 +23,8 @@ layout: default
 <p class="meta">{{ page.start-date }} to {{ page.end-date }}</p>
 <p class="meta tags">{{page.categories | array_to_sentence_string}}</p>
 
-<div class="post">
-  {{ content }}
-</div>
+{{ content }}
+
+{% if page.tags %}
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endif %}
