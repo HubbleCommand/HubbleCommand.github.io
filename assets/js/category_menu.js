@@ -10,6 +10,10 @@ function filterProjectsOnceChosen(chosen){
             if(this.dataset.categories){
                 var projCats = JSON.parse(this.dataset.categories)
 
+                if (projCats[0] == "TITLE") {   //Always show title
+                    $(this).show();
+                    return;
+                }
                 //Check that the current project has all of the required categories
                 //Hence, the chosen categories must be a subset of the project's categories
                 if(chosen.every(item => projCats.includes(item))){
