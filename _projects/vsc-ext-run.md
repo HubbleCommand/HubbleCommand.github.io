@@ -5,7 +5,10 @@ date        : 2024-01-13
 categories  : ["Godot", "Extensions"]
 programming-languages: ["Javascript", "TypeScript"]
 start-date  : 2024-01-13
+last_modified_at: 2024-01-17
 ---
+
+> I recently discovered that making some changes to Visual Studio Code's `launch.json` allows me to start the engine executible and launch my test project. I was originally having issues with SCons not doing incremental builds, which kick-started the development of this extension, but it's fixed now. Additionally, all the features I wanted have been implemented. Hence, development of this extension will most likely not continue.
 
 While working on Godot, I was annoyed by something. I was using VSCode to edit and build the engine, however I had to keep a separate File Explorer open to the `bin` folder to launch my builds of Godot. I already have a lot of windows open, and I try to keep them to a minimum. The window itself is also not the same size (unless I pout it to fullscreen, which I don't like to do with Explorer windows), so when I'm alt-tab'ing between windows they don't align nicely in a grid. I know, OCD, but that's the way it is for me.
 
