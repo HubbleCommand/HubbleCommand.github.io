@@ -3,10 +3,6 @@ layout: default
 title: About
 ---
 
-# {{ page.title }}
-
-Canadian IT dude in Switzerland.
-
 ## My philosophies & approach to Software Engineering
 
 I focus on making performant code, and maintainable code which is performant for me to maintain. All of my thoughts & approaches to SE stem from those two principles.
