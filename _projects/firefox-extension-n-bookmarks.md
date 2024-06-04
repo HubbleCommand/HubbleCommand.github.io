@@ -9,6 +9,8 @@ end-date : NA
 published: false
 ---
 
+> This project was abandoned as it honestly was meh. This was started during a period where I cared about the news, but that time has come and gone. The more I read and the more I saw, the worse it was. While I used to check the news daily from a bunch of different sources, countries, continents, but it didn't matter. I remain as informed as I want to be through better channels.
+
 After years of not having sorted my Firefox bookmarks, I decided to organise them once I finished my Bachelor's.
 
 However, there were a lot of bookmarks that I found were interesting, but that I didn't necessarily want to keep in Firefox. In particular, I had a lot of bookmarks from news sites like BBC, RT, and the Guardian that I liked, but couldn't really use as there were thousands of them (!). So, I wanted a better way to be able to search through them.
