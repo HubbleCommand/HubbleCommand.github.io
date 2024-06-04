@@ -6,6 +6,7 @@ programming-languages: ["JS", "NodeJS"]
 start-date : 2020-09-12
 order: 1
 end-date : NA
+published: false
 ---
 
 After years of not having sorted my Firefox bookmarks, I decided to organise them once I finished my Bachelor's.

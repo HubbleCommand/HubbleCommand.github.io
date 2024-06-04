@@ -6,6 +6,7 @@ categories  : ["GameDev", "Unreal Engine 4"]
 programming-languages: ["C++"]
 start-date  : 2020-09-15
 #end-date    : 
+published: false
 ---
 
 After having tried to learn GameDev in Unreal Engine 4 for a few years, I'm finally gonna buckle down and do it.
