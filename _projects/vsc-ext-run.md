@@ -2,7 +2,7 @@
 layout      : project
 title       : "VSCode Extension : Run"
 date        : 2024-01-13
-categories  : ["Godot", "Extensions"]
+categories  : ["Godot"]
 programming-languages: ["Javascript", "TypeScript"]
 icons       : ["vscode", "typescript", "javascript"]
 start-date  : 2024-01-13
