@@ -6,6 +6,7 @@ categories  : ["Godot", "Extensions"]
 programming-languages: ["Javascript", "TypeScript"]
 start-date  : 2024-01-13
 last_modified_at: 2024-01-17
+active: true
 ---
 
 > I recently discovered that making some changes to Visual Studio Code's `launch.json` allows me to start the engine executible and launch my test project. I was originally having issues with SCons not doing incremental builds, which kick-started the development of this extension, but it's fixed now. Additionally, all the features I wanted have been implemented. Hence, development of this extension will most likely not continue.
