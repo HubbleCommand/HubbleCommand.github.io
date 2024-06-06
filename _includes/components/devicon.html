@@ -1,0 +1,7 @@
+{% for icon in include.icons %}
+{% if icon contains '-' %}
+<i style="font-size: 2em" class="devicon-{{icon}}"></i>
+{% else %}
+<i style="font-size: 2em" class="devicon-{{icon}}-plain"></i>
+{% endif %}
+{% endfor %}
