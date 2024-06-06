@@ -31,12 +31,17 @@ title: Projects
             {% assign projects = site.projects | sort: "date", "last" %}
             {% for project in projects %}
                 <tr data-categories='{{project.categories | jsonify }}'>
-                    <th><a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a></th>
+                    <th>
+                        <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a>
+                        {% if project.icons %}
+                            {% include /components/devicon.html icons=project.icons %}
+                        {% endif %}
+                    </th>
                     <th><span> {{project.categories | array_to_sentence_string}}</span></th>
                     {% if project.active %}
                     <th style="text-align: center;"><span > ✓</span></th>
                     {% endif %}
-                    <!--<th><span> {{project.active}}</span></th>-->
+                    
                 </tr>
             {% endfor %}
             <tr id="project-list-end" style="display:none">
