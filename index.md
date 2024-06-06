@@ -19,11 +19,6 @@ Prepare for ramblings
 <table style="table-layout: fixed">
     <tbody>
         <tr>
-            <th><a href="{{ site.url }}{{ site.baseurl }}{% link _projects/godot.md %}">Godot</a></th>
-            <th>
-            </th>
-        </tr>
-        <tr>
             <th><a href="{{ site.url }}{{ site.baseurl }}{% link _projects/vsc-ext-run.md %}">Run</a></th>
             <th>
                 <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/v/hcommand.run-runner.svg">
