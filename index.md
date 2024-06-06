@@ -19,7 +19,13 @@ Prepare for ramblings
 <table style="table-layout: fixed">
     <tbody>
         <tr>
-            <th><a href="{{ site.url }}{{ site.baseurl }}{% link _projects/vsc-ext-run.md %}">Run</a></th>
+            <th>
+                <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/vsc-ext-run.md %}">Run</a>
+                <a>
+                    {% assign run_icons="vscode,javascript,typescript" | split: "," %}
+                    {% include /components/devicon.html icons=run_icons %}
+                </a>
+            </th>
             <th>
                 <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/v/hcommand.run-runner.svg">
                 <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/d/hcommand.run-runner.svg">
@@ -28,7 +34,13 @@ Prepare for ramblings
             </th>
         </tr>
         <tr>
-            <th><a href="{{ site.url }}{{ site.baseurl }}{% link _projects/preftil.md %}">Preftil</a></th>
+            <th>
+                <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/preftil.md %}">Preftil</a>
+                <a>
+                    {% assign preftil_icons="android,kotlin" | split: "," %}
+                    {% include /components/devicon.html icons=preftil_icons %}
+                </a>
+            </th>
             <th>
                 <img alt="Static Badge" src="https://jitpack.io/v/HubbleCommand/preftils.svg">
                 <img alt="Static Badge" src="https://jitpack.io/v/HubbleCommand/preftils/month.svg">

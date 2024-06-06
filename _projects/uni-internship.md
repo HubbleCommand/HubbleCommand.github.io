@@ -4,6 +4,7 @@ title: "Think Story Internship"
 date: 2020-09-15
 categories: ["WebDev", "Concrete5"]
 programming-languages: ["PHP"]
+icons: ["php", "less-plain-wordmark", "html5", "css3"]
 start-date : 2019-11-04
 end-date : 2020-07-28
 ---

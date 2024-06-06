@@ -4,6 +4,7 @@ title       : "Visual Studio Code Extension : Run"
 date        : 2024-01-13
 categories  : ["Godot", "Extensions"]
 programming-languages: ["Javascript", "TypeScript"]
+icons       : ["vscode", "typescript", "javascript"]
 start-date  : 2024-01-13
 last_modified_at: 2024-01-17
 active: true

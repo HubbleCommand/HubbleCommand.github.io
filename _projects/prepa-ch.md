@@ -4,6 +4,7 @@ title       : "Prepa CH"
 date        : 2024-01-16
 categories  : ["App"]
 programming-languages: ["C#"]
+icons       : ["android", "csharp", "dotnetcore"]
 start-date  : 2023-10-01
 last_modified_at: 2024-06-02
 ---
