@@ -1,6 +1,6 @@
 ---
 layout      : project
-title       : "Visual Studio Code Extension : Run"
+title       : "VSCode Extension : Run"
 date        : 2024-01-13
 categories  : ["Godot", "Extensions"]
 programming-languages: ["Javascript", "TypeScript"]
