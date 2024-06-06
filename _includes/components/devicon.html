@@ -1,7 +1,11 @@
+{% assign size = 1 %}
+{% if include.size %}
+{% assign size = include.size %}
+{% endif %}
 {% for icon in include.icons %}
 {% if icon contains '-' %}
-<i style="font-size: 2em" class="devicon-{{icon}}"></i>
+<i style="font-size:{{size}}em" class="devicon-{{icon}}"></i>
 {% else %}
-<i style="font-size: 2em" class="devicon-{{icon}}-plain"></i>
+<i style="font-size:{{size}}em" class="devicon-{{icon}}-plain"></i>
 {% endif %}
 {% endfor %}
