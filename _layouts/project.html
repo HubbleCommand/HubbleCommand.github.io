@@ -21,6 +21,12 @@ layout: default
     <p class="meta tags">last modified {{ page.last_modified_at | date_to_string }}</p>
 {% endif %}
 
+{% if page.icons %}
+{% include /components/devicon.html icons=page.icons size=2 %}
+{% endif %}
+
+<br>
+
 {% if page.categories %}
   <small>tags: <em>{{ page.categories | join: "</em> - <em>" | downcase }}</em></small>
 {% endif %}
