@@ -74,7 +74,8 @@ interface ICodable {
 }
 ```
 
-Taking it's name from [Swift](https://www.swift.org/)'s [Codable](https://developer.apple.com/documentation/swift/codable), the `ICodable` interface makes inheriting classes implement both a way to decode itself into a string, and encode itself from a string. While I would have prefered a static way to do this without the need for an instance of the class, the problem is that in Kotliin, this would mean that classes inheriting from `ICodable` would not be required to implement the `decode()` method. I guess I could have gone the [Factory Pattern](https://refactoring.guru/design-patterns/factory-method) or another creation pattern route, but the purpose of this library was to make things *simple*, so not wanting to add any additional complexity, I left it as is.
+Taking it's name from [Swift](https://www.swift.org/)'s [Codable](https://developer.apple.com/documentation/swift/codable), the `ICodable` interface makes inheriting classes implement both a way to encode itself into a string, and decode itself from a string.
+While I would have prefered a static way to do this without the need for an instance of the class, the problem is that in Kotliin, this would mean that classes inheriting from `ICodable` would not be required to implement the `decode()` method. I guess I could have gone the [Factory Pattern](https://refactoring.guru/design-patterns/factory-method) or another creation pattern route, but the purpose of this library was to make things *simple*, so not wanting to add any additional complexity, I left it as is.
 
 The get function now has :
 
