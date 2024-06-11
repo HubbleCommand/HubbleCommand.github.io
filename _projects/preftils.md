@@ -1,10 +1,10 @@
 ---
 layout: project
-title: "preftils - Android Kotlin Preferences Utility"
+title: "preftils - Android Preferences Utility"
 date: 2024-05-11
 categories: ["Android"]
-programming-languages: ["Kotlin"]
-icons: ["android", "kotlin"]
+programming-languages: ["Kotlin", "Java"]
+icons: ["android", "kotlin", "java"]
 last_modified_at: 2024-06-06
 active: true
 ---
@@ -62,6 +62,11 @@ As this is a pure Kotlin library, Java support was secondary. However, simply re
 > After some investigation, the performance difference between `inlining` or not is negligible. It will be removed in a later update to allow for Java interoperability.
 
 While this was nice, there was a major case that I hadn't covered: custom classes. As it stood, if anything besides a `String`, `Int`, `Long`, `Boolean`, or `Float`, it would throw an `IllegalArgumentException`. This was ignoring a fair amount of the original problem of multiple different parsing functions for the same classes (although there were certainly cleaner ways to do that as well).
+
+Enter support for serialization. Continue reading below.
+
+<details markdown="1">
+<summary>Collapsed section on removed features<blockquote>This collapsed section was written for v1.1.0, which introduced the <code>ICodable</code> interface for serializing custom classes, which is no longer available in favor of official Kotlin and Java serialization language features</blockquote></summary>
 
 Enter `ICodable`:
 
@@ -128,6 +133,92 @@ inline fun <reified T> SharedPreferences.getSerializable(preference: Preference<
 ```
 
 > I will update this page with a new section once this is done
+</details>
+
+
+## Adding Kotlin [Serialization](https://kotlinlang.org/docs/serialization.html) support
+
+The biggest blocker was the following warning on the `@Serialization` annotation:
+
+`"kotlinx.serialization compiler plugin is not applied to the module, so this annotation would not be processed. Make sure that you've setup your buildscript correctly and re-import project."`
+
+I had followed everything to a T, and couldn't for the life of me figure out what was wrong.
+After a few hours of searching, I was completely lost. I had applied the necessary plugins and imported the necessary dependencies.
+
+I eventually stumbled upon [this GitHub issue](https://github.com/Kotlin/kotlinx.serialization/issues/2508). I was using Android Studio Giraffe 2022.3.1 patch 2, but there was a newer version available, Android Studio Jellyfish 2023.3.1 patch 1. After upgrading Android Studio, the warning dissapeared, and everything works.
+
+I should probably go over [what's new in Android Studio](https://developer.android.com/studio/releases?utm_source=android-studio&utm_medium=studio-assistant), but I can't be bothere ATM. Although I should probably address the [`Windows Defender might be impacting your build performance` warning](https://stackoverflow.com/questions/57202043/windows-defender-might-be-impacting-your-build-performance).
+
+
+## Adding Java support
+Instead of trying to force the Kotlin to code to work with Java, I've decided to write the Java equivalent.
+
+Java serialization works differently, using [inheritence](https://docs.oracle.com/javase%2Ftutorial%2F/java/IandI/subclasses.html) with the [Serializable interface](https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html) similar to the `ICodable` I originally made, instead of doing it with [Annotations](https://kotlinlang.org/docs/annotations.html) like in Kotlin. I find this approach superior, as it is easy to test if a type is serializable or not. In Kotlin, you always run the risk of runtime errors with no compile-time support (in this case, the support is lost due to the use of generics), yet in Java, you cannot even compile if the type does not conform to the `Serializable` interface.
+
+It was also a chance to look into some of the newer features of Java, notably the better [pattern matching of Java 21](https://blogs.oracle.com/javamagazine/post/java-pattern-matching-switch-preview). This would mean an end to long `if-if-else` blocks to handle different types. I ended up with the following:
+<details markdown="1">
+<summary>Java code using switch patterns on types</summary>
+
+```
+public class PreferenceUtils {
+    static <T> void set(SharedPreferences.Editor editor, Preference<T> preference, T value) throws IOException {
+        switch (value) {
+            case Integer i -> editor.putInt(preference.getKey(), i);
+            case Long l -> editor.putLong(preference.getKey(), l);
+            case Float f -> editor.putFloat(preference.getKey(), f);
+            case Boolean b -> editor.putBoolean(preference.getKey(), b);
+            case String s -> editor.putString(preference.getKey(), s);
+            case java.io.Serializable serializable -> {
+                ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+                ObjectOutputStream out = new ObjectOutputStream(outStream);
+                out.writeObject(serializable);
+                out.flush();
+                out.close();
+
+                editor.putString(preference.getKey(), outStream.toString());
+                outStream.flush();
+                outStream.close();
+            }
+            default -> throw new IllegalArgumentException("Unsupported type: " + preference.getDefault().getClass());
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    static <T> T get(SharedPreferences preferences, Preference<T> preference) throws IOException, ClassNotFoundException {
+        return preference.getDefault();
+        return switch (preference.getDefault()) {
+            case Integer i -> (T) (Integer) preferences.getInt(preference.getKey(), i);
+            case Long l -> (T) (Long) preferences.getLong(preference.getKey(), l);
+            case Float f -> (T) (Float) preferences.getFloat(preference.getKey(), f);
+            case Boolean b -> (T) (Boolean) preferences.getBoolean(preference.getKey(), b);
+            case String s -> (T) preferences.getString(preference.getKey(), s);
+            case java.io.Serializable ignored -> {
+                String string = preferences.getString(preference.getKey(), null);
+                if (string == null) {
+                    yield preference.getDefault();
+                }
+
+                ByteArrayInputStream inStream = new ByteArrayInputStream(string.getBytes());
+                ObjectInputStream in = new ObjectInputStream(inStream);
+
+                T object = (T) in.readObject();
+                inStream.close();
+                in.close();
+
+                yield object;
+            }
+            default -> throw new IllegalArgumentException("Unsupported type: " + preference.getDefault().getClass());
+        };
+    }
+}
+```
+
+</details>
+
+Clean and succinct. However, I kept getting the following compilation error:
+`com.sun.tools.javac.code.Symbol$CompletionFailure: class file for java.lang.runtime.SwitchBootstraps not found`
+
+After a bit of searching I found [this](https://news.ycombinator.com/item?id=36282076), which is a neat read, but doesn't help. I tried with JDK 21.0.1 and 22.0.1, Oracle JDK and Microsoft's OpenJDK, but nothing seemed to work. As I had already wasted enough time with integrating Kotlin Serialization support, I wasn't going to try and fix this just to keep my own code tidy. I submitted a bug report, but for now, I'm going to stick to Java 8.
 
 
 ## Publishing to JitPack
