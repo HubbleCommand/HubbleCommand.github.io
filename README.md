@@ -4,6 +4,9 @@
 
 Repo for my portfolio.
 
+# Running Locally
+Install the dependencies, [official Jekyll tutorial here](https://jekyllrb.com/docs/installation/), or from [GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).
+
 Once you have cloned, run `bundle install` to install the necessary dependencies.
 
 To start the server, run `bundle exec jekyll serve --trace --host=localhost`
