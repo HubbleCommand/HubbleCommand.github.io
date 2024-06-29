@@ -2,7 +2,10 @@
 layout: post
 title: "Graphite.rs - Vector Graphics Editor"
 date: 2024-06-17
+last_modified_at: 2024-06-29
 ---
+
+> While this is probably the cleanest free vector graphics tool out there, export issues are very bad, making it next to unusable
 
 While working on some custom Godot nodes, I needed to make custom icons. The [documentation](https://docs.godotengine.org/en/stable/contributing/development/editor/creating_icons.html) mentions using [Inkscape](https://inkscape.org/), (which is thankfully available though [scoop extras](https://bjansen.github.io/scoop-apps/extras/inkscape/)), but I'm honestly not a fan of it. I'm not a fan of any of them really.
 
