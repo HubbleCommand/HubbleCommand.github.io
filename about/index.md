@@ -5,10 +5,13 @@ title: About
 
 ## My philosophies & approach to Software Engineering
 
-I focus on making performant code, and maintainable code which is performant for me to maintain. All of my thoughts & approaches to SE stem from those two principles.
+I focus on making performant code; efficient to run and efficient to maintain. All of my thoughts & approaches to SE stem from those two principles.
 
-### Swiss army knife
+## Swiss army knife
 Focus more on learning architectural approaches than the specifics of a language or a framework, unless they are particularly interesting or relevant to a task that you are doing. When working with a framework, library, engine, or language, be sure to know how they are opinionated to be able to work with them most effectively. Consider; knowing multithreading techniques and differences between [Kotlin's suspend](https://kotlinlang.org/docs/async-programming.html#futures-promises-and-others) and [C#'s await](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/async-scenarios), or UI design patterns and how to apply them to [iOS's Storyboard](https://developer.apple.com/library/archive/documentation/General/Conceptual/Devpedia-CocoaApp/Storyboard.html) compared to applying them in [Android's Views](https://developer.android.com/develop/ui/views/layout/declaring-layout).
+
+## Not perfect, but perfectly workable
+It's impossible to make the perfect software. From simple bugs to incorrect strategy, it is effectively, nearly thermodinamically impossible for every single step of the Software Development cycle to be accident-free. The same thing can be said about pretty much anything: perfection is an unattainable absolute.
 
 ### Do it once, think ahead
 Pre-emptive optimization is the root of all evil. So is a lack of foresight.
