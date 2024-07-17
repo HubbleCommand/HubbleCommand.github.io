@@ -27,9 +27,12 @@ Prepare for ramblings
                 </a>
             </th>
             <th>
-                <img alt="Static Badge" src="https://jitpack.io/v/HubbleCommand/preftils.svg">
-                <img alt="Static Badge" src="https://jitpack.io/v/HubbleCommand/preftils/month.svg">
-                <img alt="Static Badge" src="https://img.shields.io/github/license/HubbleCommand/preftils.svg?color=blue">
+                <a href="https://jitpack.io/#hubblecommand/preftils">
+                    <img alt="Static Badge" src="https://jitpack.io/v/HubbleCommand/preftils.svg"></a>
+                <a href="https://jitpack.io/#hubblecommand/preftils">
+                    <img alt="Static Badge" src="https://jitpack.io/v/HubbleCommand/preftils/month.svg"></a>
+                <a href="https://github.com/hubblecommand/preftils/blob/master/LICENSE">
+                    <img alt="Static Badge" src="https://img.shields.io/github/license/HubbleCommand/preftils.svg?color=blue"></a>
             </th>
         </tr>
         <tr>
@@ -41,10 +44,14 @@ Prepare for ramblings
                 </a>
             </th>
             <th>
-                <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/v/hcommand.run-runner.svg">
-                <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/d/hcommand.run-runner.svg">
-                <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/r/hcommand.run-runner.svg">
-                <img alt="Static Badge" src="https://img.shields.io/github/license/hubblecommand/run.svg?color=blue">
+                <a href="https://marketplace.visualstudio.com/items?itemName=hcommand.run-runner">
+                    <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/v/hcommand.run-runner.svg"></a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=hcommand.run-runner">
+                    <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/d/hcommand.run-runner.svg"></a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=hcommand.run-runner">
+                    <img alt="Static Badge" src="https://img.shields.io/vscode-marketplace/r/hcommand.run-runner.svg"></a>
+                <a href="https://github.com/hubblecommand/run/blob/master/LICENSE">
+                    <img alt="Static Badge" src="https://img.shields.io/github/license/hubblecommand/run.svg?color=blue"></a>
             </th>
         </tr>
     </tbody>
