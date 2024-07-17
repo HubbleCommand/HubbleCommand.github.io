@@ -22,7 +22,7 @@ Prepare for ramblings
             <th>
                 <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/preftils.md %}">Preftil</a>
                 <a>
-                    {% assign preftil_icons="android,kotlin" | split: "," %}
+                    {% assign preftil_icons="android,kotlin,java" | split: "," %}
                     {% include /components/devicon.html icons=preftil_icons %}
                 </a>
             </th>
