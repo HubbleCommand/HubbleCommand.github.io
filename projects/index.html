@@ -30,6 +30,11 @@ title: Projects
 
             {% assign projects = site.projects | sort: "date", "last" %}
             {% for project in projects %}
+                {% capture file_path %}{{ project.path }}{% endcapture %}
+                {% assign path_parts = file_path | split: '/' %}
+                {% if path_parts.size != 2 %}
+                    {% continue %}
+                {% endif %}
                 <tr data-categories='{{project.categories | jsonify }}'>
                     <th>
                         <a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a>
