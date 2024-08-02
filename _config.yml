@@ -11,3 +11,5 @@ plugins:
 collections:
   projects:
     output: true
+    godot:
+      output: true

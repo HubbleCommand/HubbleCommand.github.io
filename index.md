@@ -20,6 +20,17 @@ Prepare for ramblings
     <tbody>
         <tr>
             <th>
+                <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/godot-overview.md %}">Godot</a>
+                <a>
+                    {% assign godot_icons="godot" | split: "," %}
+                    {% include /components/devicon.html icons=godot_icons %}
+                </a>
+            </th>
+            <th>
+            </th>
+        </tr>
+        <tr>
+            <th>
                 <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/vsc-ext-run.md %}">Run</a>
                 <a>
                     {% assign run_icons="vscode,javascript,typescript" | split: "," %}
