@@ -6,13 +6,16 @@ categories  : ["Godot"]
 programming-languages: ["Javascript", "TypeScript"]
 icons       : ["vscode", "typescript", "javascript"]
 start-date  : 2024-01-13
-last_modified_at: 2024-01-17
+last_modified_at: 2024-08-02
 active: true
 ---
+
+> After a few months, the extension has recently passed 10'000 installs! (2024-08)
 
 [ext-url]: https://marketplace.visualstudio.com/items?itemName=hcommand.run-runner
 [![Ratings Badge](https://img.shields.io/vscode-marketplace/v/hcommand.run-runner.svg)][ext-url]
 [![Downloads Badge](https://img.shields.io/vscode-marketplace/d/hcommand.run-runner.svg)][ext-url]
+[![Installs Badge](https://img.shields.io/vscode-marketplace/i/hcommand.run-runner.svg)][ext-url]
 [![Ratings Badge](https://img.shields.io/vscode-marketplace/r/hcommand.run-runner.svg)][ext-url]
 [![License Badge](https://img.shields.io/github/license/hubblecommand/run.svg?color=blue)](https://github.com/hubblecommand/run/blob/master/LICENSE)
 
