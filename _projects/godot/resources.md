@@ -112,6 +112,20 @@ Loadout
 
 
 ## Shaders
+Before working with shaders, you need to know more about matrices, or how the GPU actually draws to your screen.
+
+[The Transformation Matrix for 2D Games](https://www.alanzucconi.com/2016/02/10/tranfsormation-matrix/)
+https://www.alanzucconi.com/2017/07/15/cd-rom-shader-2/
+
+In Video Games, The Player Never Moves
+https://www.youtube.com/watch?v=wiYTxjJjfxs 
+
+Perspective Projection Matrix
+EqNcqBdrNyI
+
+3D Software Rendering Graphics Pipeline
+7qUuzRY5YwI
+
 <iframe width="420" height="315" src="https://www.youtube.com/embed/nyFzPaWAzeQ" frameborder="0" allowfullscreen></iframe>
 
 Sample shader assets:
