@@ -30,6 +30,7 @@ Godot specific
 <iframe width="420" height="315" src="https://www.youtube.com/embed/w7eSSpiJv2U" frameborder="0" allowfullscreen></iframe>
 <iframe width="420" height="315" src="https://www.youtube.com/embed/JJid46XzW8A" frameborder="0" allowfullscreen></iframe>
 <iframe width="420" height="315" src="https://www.youtube.com/embed/p_IvmDm-Ywk" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/4az0VX9ApcA" frameborder="0" allowfullscreen></iframe>
 
 ## Blurry sprites / textures
 Fix blurry Sprites: use Nearest filtering mode (can set in Project -> Render -> Textures or on each node individually).
@@ -47,6 +48,7 @@ Try to do this at the highet level possible.
 ### State Machines
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/VtJXqRsFezY" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/vZHzMO90IwQ" frameborder="0" allowfullscreen></iframe>
 
 Design patterns are, in general, the more powerful tools in a SE's toolbelt. This is because they solve common issues in easy and maintainable ways.
 
