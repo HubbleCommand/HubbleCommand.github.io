@@ -20,17 +20,16 @@ function fetchHubbleRepoStars() {
 			return element.stargazers_count > 0;
 		});
 		var sorted = starred = starred.sort((a, b) => {
-			return a.stargazers_count - b.stargazers_count
+			return b.stargazers_count - a.stargazers_count
 		})
 
-		var table = document.getElementById("repo-stars")
+		var grid = document.getElementById("repo-stars")
 		sorted.forEach(repo => {
-			var row = table.insertRow(0)
-			var name = row.insertCell(0)
-			var stars = row.insertCell(1)
-
-			name.innerHTML = `<a href="${repo.html_url}">${repo.name}</a>`
-			stars.innerHTML = `<div align="center"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/HubbleCommand/${repo.name}"></div>`
+			grid.innerHTML +=
+			`<div style="display: inline-block; padding: 20px; text-align: center; align: center;">
+				<a href="${repo.html_url}">${repo.name}</a>
+				<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/HubbleCommand/${repo.name}">
+			</div>`
 		});
 	})
 }

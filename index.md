@@ -72,9 +72,7 @@ Prepare for ramblings
 ## My starred repos
 <script src="/assets/js/repo_stars.js"></script>
 
-<div>
-    <table style="table-layout: fixed" id="repo-stars"></table>
-</div>
+<div style="display: grid; grid-template-columns: auto auto;" id="repo-stars"></div>
 
 ## Repos I've starred
 <div style="display: grid; grid-template-columns: auto auto auto;" id="starred-repos"></div>
