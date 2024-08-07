@@ -67,3 +67,14 @@ Prepare for ramblings
         </tr>
     </tbody>
 </table>
+
+
+## My starred repos
+<script src="/assets/js/repo_stars.js"></script>
+
+<div>
+    <table style="table-layout: fixed" id="repo-stars"></table>
+</div>
+
+## Repos I've starred
+<div style="display: grid; grid-template-columns: auto auto auto;" id="starred-repos"></div>
