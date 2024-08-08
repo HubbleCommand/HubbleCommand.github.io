@@ -54,6 +54,14 @@ Someone suggested a shader, and I realized what a fool I was for not realizing t
 I don't feel to bad for using as a starting point.
 There was a LOT more to add, and many issues to fix, but after a while I got it working with Godot's existing Sprite3D node parameters.
 
+### Funny issue with rads
+Radians are usually the go-to when dealing with angles.
+
+However, in my case, I had to use degrees. Not out of preference, but out of necessity. When using radians, there would be flickers between frames close to the angular "borders".
+
+My guess is that due to the successive divisions with floats, that precision loss was the issue with the small fractional values that are intrinsic with radians.
+Degrees, on the other hand, have a much greater range at two degrees of magnitude larger.
+
 ### Going back to 2D
 Ironically, getting directional sprites in 2D is much more painful.
 
