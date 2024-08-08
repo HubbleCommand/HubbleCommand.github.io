@@ -36,8 +36,6 @@ function fetchHubbleRepoStars() {
 
 function fetchHubbleStarredRepos() {
 	call("https://api.github.com/users/HubbleCommand/starred", data => {
-		console.log(data);
-
 		var grid = document.getElementById("starred-repos")
 		data.forEach(repo => {
 			grid.innerHTML += `<div style="display: inline-block; padding: 20px; text-align: center;"><a href="${repo.html_url}">${repo.name}</a></div>`
