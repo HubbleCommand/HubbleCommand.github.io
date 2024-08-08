@@ -65,8 +65,54 @@ Degrees, on the other hand, have a much greater range at two degrees of magnitud
 ### Going back to 2D
 Ironically, getting directional sprites in 2D is much more painful.
 
-The shader itself took a bit longer as I did it from scratch.
+The shader itself wasn't too bad. However, I realized I had a problem once I looked into 2D lighting.
 
-However, I realized I had a problem once I looked into 2D lighting. 
-2D lighting doesn't work the same at all as in 3D, and requires [LightOccluder2D](https://docs.godotengine.org/en/stable/classes/class_lightoccluder2d.html) nodes.
+2D lighting doesn't work the same at all as in 3D. In 3D space, you can change the `ALPHA` in `fragment()`, which changes how shadows are cast / light is blocked.
+
+2D, however, requires [LightOccluder2D](https://docs.godotengine.org/en/stable/classes/class_lightoccluder2d.html) nodes to cast shadows.
+
+I first look into using a mix of `fragment()`'s `SHADOW_VERTEX` or `light()`'s `SHADOW_MODULATE`, although I believe the former only works on the shadow of the pixel, not on shadows cast.
+Looking at [this discussion](https://github.com/godotengine/godot-proposals/discussions/8298), it would appear that I am correct on the behavior of `SHADOW_VERTEX`.
+`SHADOW_MODULATE`'s description reads as follows:
+> Multiply shadows cast at this point by this color.
+However, this works like other modulation: it only changes the color. There doesn't seem to be a way to change the shadows cast through the shader in this manner.
+
+The logical next step would be to apply a shader to the LightOccluder2D node. However, this wont't work either.
+`LightOccluder2D` doesn't direcectly cast a shadow, it's `OccluderPolygon2D` does.
+In practice, a shader applied to a LightOccluder won't affect the OccluderPolygon.
+
+Looking into the code, the issue seems to be that the  of the  is simply registered in the renderer.
+Looking at the source code, 
+```
+void OccluderPolygon2D::set_polygon(const Vector<Vector2> &p_polygon) {
+	polygon = p_polygon;
+	rect_cache_dirty = true;
+	RS::get_singleton()->canvas_occluder_polygon_set_shape(occ_polygon, p_polygon, closed);
+	emit_changed();
+}
+```
+Looking furthur down, `renderer_canvas_cull.cpp`'s `canvas_occluder_polygon_set_shape` and `renderer_canvas_cull.cpp`'s `occluder_polygon_set_shape` confirm my hypothesis.
+
+Even when looking at 2D SDF, there was no apparent hope.
+Read following on SDF
+- [Implement Signed Distance Fields for 2D shaders](https://github.com/godotengine/godot/pull/43886)
+- [Ray Marching and Signed Distance Functions](https://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/)
+- [Signed Distance Fields for 2D](https://godotengine.org/article/godots-2d-engine-gets-several-improvements-upcoming-40/)
+- [Dynamic 2D Lights and Soft Shadows](https://godotshaders.com/shader/dynamic-2d-lights-and-soft-shadows/)
+
 This means that the shader approach won't really work, unfortunately.
+
+The last ditch effort would be to rotate the `LightOccluder2D` in a script, however the question becomes where to rotate it to.
+Always keep it vertical? Well, the Sprite won't always be vertical in world space, but in canvas space.
+And the only way to do that in a script is to keep a reference to the currently active camera, which has the issues described above.
+```
+	get_viewport().get_camera_2d()
+```
+
+The only other options would be to make a new 2D lighting system... or make major changes to the existing one.
+
+[Custom lighting system in Godot](https://www.youtube.com/watch?v=kM71HecDOvM)
+
+It would appear that this is just not worth it, or to just do the script approach.
+The other thing is that the systems in 2D are usually very different than in 3D.
+Cameras are, in general, fixed to a certain direction, meaning that the major problem stated above with the Script approach doesn't apply here.
