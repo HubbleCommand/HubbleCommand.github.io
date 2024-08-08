@@ -85,6 +85,7 @@ Theming is Godot's system for doing UI skinning and standardizing your UI easily
 <iframe width="420" height="315" src="https://www.youtube.com/embed/nzDv4xFIJnI" frameborder="0" allowfullscreen></iframe>
 <iframe width="420" height="315" src="https://www.youtube.com/embed/vzRZjM9MTGw" frameborder="0" allowfullscreen></iframe>
 
+Ironically, the first tip in [this video](https://www.youtube.com/watch?v=5R0ajAElEgk) is somewhat bad practice, and could be fixed with resources.
 
 ## Inventory-like
 
@@ -121,6 +122,9 @@ https://www.alanzucconi.com/2017/07/15/cd-rom-shader-2/
 
 In Video Games, The Player Never Moves
 https://www.youtube.com/watch?v=wiYTxjJjfxs 
+
+Homogeneous Coordinates
+https://www.youtube.com/watch?v=MQdm0Z_gNcw
 
 Perspective Projection Matrix
 EqNcqBdrNyI
