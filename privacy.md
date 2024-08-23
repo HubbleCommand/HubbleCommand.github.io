@@ -4,10 +4,18 @@ layout: default
 title: Privacy Policy
 ---
 # Privacy Policy
-## We Collect No Data
-This site collects no data, nor do any of our other products. The focus is on making good products, not how to game our data.
+## Collection of Personal Information
+
+This website, along with our other products (games & apps), do not collect, store, use or share any information, personal or otherwise.
+
+The focus is on making good products, not how to game your data.
+
+## Disclosure of Personal Information
+
+We will not disclose your information to any third party except if you expressly consent or where required by law.
 
 ## Third Parties
+We use some third party tools to improve our services. We do not, however, transfer any data to them that you do not directly give them yourself (i.e. Profile information for Google Play Services or for Steam).
 
 ### Google
 Our websites and mobile apps use some Google services, notably AdMob for delivering ads, as well as Google Play Services for our mobile games to give you services like Achievements that tie in with you existing Google Play profile.
