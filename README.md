@@ -13,6 +13,9 @@ To start the server, run `bundle exec jekyll serve --trace --host=localhost`
 
 Once the server is started, can navigate to : http://localhost:4000/
 
+## Updating dependencies
+You can update gems, packages, and other dependencies with `bundle update`.
+
 # Resources
 ## Jekyll useful
 - [includes](https://daverupert.com/2017/07/jekyll-includes-are-cool/)
