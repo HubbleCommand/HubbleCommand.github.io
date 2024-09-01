@@ -126,11 +126,23 @@ https://www.youtube.com/watch?v=wiYTxjJjfxs
 Homogeneous Coordinates
 https://www.youtube.com/watch?v=MQdm0Z_gNcw
 
+
+Quick Understanding of Homogeneous Coordinates for Computer Graphics
+https://www.youtube.com/watch?v=o-xwmTODTUI
+
 Perspective Projection Matrix
 EqNcqBdrNyI
 
 3D Software Rendering Graphics Pipeline
 7qUuzRY5YwI
+
+PlayWithFurcifer (VERY good for basics)
+https://www.youtube.com/watch?v=BZp8DwPdj4s
+https://www.youtube.com/watch?v=1pJyYtBAHks
+
+3 MUST-KNOW Shader Effects for 2D Environment in Godot 4
+https://www.youtube.com/watch?v=L97Y12TV7Ro
+
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/nyFzPaWAzeQ" frameborder="0" allowfullscreen></iframe>
 
