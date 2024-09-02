@@ -79,7 +79,7 @@ However, this works like other modulation: it only changes the color. There does
 
 The logical next step would be to apply a shader to the LightOccluder2D node. However, this wont't work either.
 `LightOccluder2D` doesn't direcectly cast a shadow, it's `OccluderPolygon2D` does.
-In practice, a shader applied to a LightOccluder won't affect the OccluderPolygon.
+In practice, a shader applied to a LightOccluder will only change the editor / debug representation of the `LightOccluder2D`, but not the OccluderPolygon which casts the shadow.
 
 Looking into the code, the issue seems to be that the  of the  is simply registered in the renderer.
 Looking at the source code, 
@@ -93,12 +93,24 @@ void OccluderPolygon2D::set_polygon(const Vector<Vector2> &p_polygon) {
 ```
 Looking furthur down, `renderer_canvas_cull.cpp`'s `canvas_occluder_polygon_set_shape` and `renderer_canvas_cull.cpp`'s `occluder_polygon_set_shape` confirm my hypothesis.
 
-Even when looking at 2D SDF, there was no apparent hope.
-Read following on SDF
+Even when looking at 2D SDF, there was no apparent hope, although the following on SDF are neat:
 - [Implement Signed Distance Fields for 2D shaders](https://github.com/godotengine/godot/pull/43886)
 - [Ray Marching and Signed Distance Functions](https://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/)
 - [Signed Distance Fields for 2D](https://godotengine.org/article/godots-2d-engine-gets-several-improvements-upcoming-40/)
 - [Dynamic 2D Lights and Soft Shadows](https://godotshaders.com/shader/dynamic-2d-lights-and-soft-shadows/)
+
+I tried using 2D Meshes, as you can apply a shader to it that will affect it's geometry.
+A `MeshInstance2D` with a `QuadMesh` will have it's mesh's height reduced to an eight with the following shader: 
+
+```
+shader_type canvas_item;
+
+void vertex() {
+	VERTEX.y /= 8.0;
+}
+```
+
+However, `MeshInstance2D`s don't cast shadows, the only things that do cast shadows are `LightOccluder2D`.
 
 This means that the shader approach won't really work, unfortunately.
 
@@ -116,3 +128,10 @@ The only other options would be to make a new 2D lighting system... or make majo
 It would appear that this is just not worth it, or to just do the script approach.
 The other thing is that the systems in 2D are usually very different than in 3D.
 Cameras are, in general, fixed to a certain direction, meaning that the major problem stated above with the Script approach doesn't apply here.
+
+#### "Workaround" for 2D shadows
+Calling this a workaround seems disingenuous, as it really isn't that much of a fix.
+
+Just use an appropriately-shaped `LightOccluder2D` that provides an appropriate shadow cast for all angles of the sprite.
+
+Now, this only works for sprites with little topographical varience. This will work for say, a human, but less likely for a long bus.
