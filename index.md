@@ -69,7 +69,7 @@ Prepare for ramblings
 </table>
 
 
-## My starred repos
+## My repos that have been starred
 <script src="/assets/js/repo_stars.js"></script>
 
 <div style="display: grid; grid-template-columns: auto auto;" id="repo-stars"></div>
