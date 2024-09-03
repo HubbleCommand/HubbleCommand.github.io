@@ -135,3 +135,6 @@ Calling this a workaround seems disingenuous, as it really isn't that much of a 
 Just use an appropriately-shaped `LightOccluder2D` that provides an appropriate shadow cast for all angles of the sprite.
 
 Now, this only works for sprites with little topographical varience. This will work for say, a human, but less likely for a long bus.
+
+This also only works if your 2D world does not change orientation, i.e. the camera rotation always stays the same.
+This is very common for most 2D games, but it is a strict limitation.
