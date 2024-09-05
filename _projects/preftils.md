@@ -5,7 +5,7 @@ date: 2024-05-11
 categories: ["Android"]
 programming-languages: ["Kotlin", "Java"]
 icons: ["android", "kotlin", "java"]
-last_modified_at: 2024-06-06
+last_modified_at: 2024-09-05
 active: true
 ---
 
@@ -151,6 +151,8 @@ I should probably go over [what's new in Android Studio](https://developer.andro
 
 
 ## Adding Java support
+> By complete chance, I found why the Java21 stuff didn't work, and I can't believe that I hadn't even noticed the very obvious: Android does it's own compatability with the JVM, and currently only supports up to version 17. So obviously using Java 21 APIs wouldn't work! Dadoi!
+
 Instead of trying to force the Kotlin to code to work with Java, I've decided to write the Java equivalent.
 
 Java serialization works differently, using [inheritence](https://docs.oracle.com/javase%2Ftutorial%2F/java/IandI/subclasses.html) with the [Serializable interface](https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html) similar to the `ICodable` I originally made, instead of doing it with [Annotations](https://kotlinlang.org/docs/annotations.html) like in Kotlin. I find this approach superior, as it is easy to test if a type is serializable or not. In Kotlin, you always run the risk of runtime errors with no compile-time support (in this case, the support is lost due to the use of generics), yet in Java, you cannot even compile if the type does not conform to the `Serializable` interface.
