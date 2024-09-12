@@ -49,10 +49,28 @@ Ideally, I wanted a solution that would work regardless of camera: some way to m
 I started looking into the C++ implementations of the 3D sprite classes, but realized that it would take a lot of time to get something working, and was about to give up due to time constraints.
 
 Then, I stumbled upon [this Godot proposal](https://github.com/godotengine/godot-proposals/discussions/5082).
+Calinou also did some work on it [here](https://github.com/Calinou/godot-demo-projects/blob/add-first-person-shooter/3d/first_person_shooter/enemy/enemy.gdshader).
 Someone suggested a shader, and I realized what a fool I was for not realizing that myself: it's exactly the way to get each camera to get the correct representation!
+
+> I also found some other neat shaders, although none really did what I wanted, or just didn't work
+- [Custom Y-Billboard Shader](https://www.reddit.com/r/godot/comments/12299wx/custom_ybillboard_shader_i_made/)
+- [Shader only 8 directional billboarding](https://www.reddit.com/r/godot/comments/13fgdek/shader_only_8_directional_billboarding/)
+- [How to do I make a shader a billboard](https://forum.godotengine.org/t/how-to-do-i-make-a-shader-a-billboard-face-the-player/1980)
+- [Billboard Sprite3D Hitflash](https://godotshaders.com/shader/billboard-sprite3d-hitflash-godot-4-x/)
 
 I don't feel to bad for using as a starting point.
 There was a LOT more to add, and many issues to fix, but after a while I got it working with Godot's existing Sprite3D node parameters.
+
+### Matrices Overview
+Before going furthur, if you don't know much about matrices, I highly recommend reading the following articles.
+Matrices are the basis of shaders, after all.
+
+- [Godot Matrices and transforms](https://docs.godotengine.org/en/stable/tutorials/math/matrices_and_transforms.html)
+- [The Transformation Matrix for 2D Games](https://www.alanzucconi.com/2016/02/10/tranfsormation-matrix/)
+- [Spatial Transformation Matrices](https://www.brainvoyager.com/bv/doc/UsersGuide/CoordsAndTransforms/SpatialTransformationMatrices.html) (I used this at work while doing some AR stuff)
+- [Matrices for Tech Artists, a Cheat Sheet](https://shahriyarshahrabi.medium.com/matrices-for-tech-artists-a-cheat-sheet-a81ef64f3b7f)
+- [3D Maths Cheat Sheet](https://antongerdelan.net/teaching/maths_cheat_sheet.pdf)
+- [Matrices and Vectors in Game Development](https://dev.to/fkkarakurt/matrices-and-vectors-in-game-development-67h)
 
 ### Funny issue with rads
 Radians are usually the go-to when dealing with angles.
