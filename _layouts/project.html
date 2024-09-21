@@ -26,8 +26,8 @@ layout: default
 {% endif %}
 
 <br>
-
-{% if page.categories %}
+{% assign catsize = page.categories | size %}
+{% if page.categories and catsize > 0 %}
   <small>tags: <em>{{ page.categories | join: "</em> - <em>" | downcase }}</em></small>
 {% endif %}
 
