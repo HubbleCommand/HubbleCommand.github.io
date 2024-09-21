@@ -5,7 +5,7 @@ date: 2024-05-11
 categories: ["Android"]
 programming-languages: ["Kotlin", "Java"]
 icons: ["android", "kotlin", "java"]
-last_modified_at: 2024-09-05
+last_modified_at: 2024-09-21
 active: true
 ---
 
@@ -16,6 +16,9 @@ active: true
 
 preftils is self-described as a
   > Small helper library for working with Android SharedPreferences
+
+
+> I recently looked into DataStore, read the last section for more details
 
 ## The problem
 There were many things I worked on at my previous job as an Android Software Engineer. From taking over the integration of some of the company's advanced libraries to implementing novel features with standard practices, the job presented itself with a fair amount of interesting, dynamic, and fun challenges.
@@ -244,3 +247,17 @@ The process was fairly simple:
 - create a new release of the repo
 
 Things didn't work at first, so I fiddled with settings in by gradle & `jitpack.yml` until I couldn't figure out why JitPack kept failing to build. I ended up having to peruse tutorials for a fix, and stumbled upon [Mike's Code](https://www.youtube.com/@Mikes-Code)'s video on [publishing to JitPack](https://www.youtube.com/watch?v=6XugK4Sin6w). The answer was kind of un-intuitive, which was that the module had to exist within an Android project. After moving the module into a project & uploading the whole thing to GitHub, the first release built without a hitch.
+
+
+## Data Store Investigation
+The newer [DataStore](https://developer.android.com/topic/libraries/architecture/datastore) provides type safety through [Proto DataStore](https://developer.android.com/codelabs/android-proto-datastore#5), although the base DataStore provides some type checking if you're smart about it.
+However, it felt a bit more obtuse at first glance, so I wanted to see if I could quickly put together a similar solution for the basic DataStore as I had done for SharedPreferences.
+
+After getting to the end, I realized that it was sort of pointless: the main benefit was adding serializable class support, but that is already better done with the Proto DataStore.
+DataStore already has about the same level of type safety that I added to SharedPreferences; there isn't much more I could add.
+
+That is why I will not be adding it into the main package: while it was neat to take a look at it, it didn't really solve a problem like it did for SharedPreferences. It is much better to just use the Proto DataStore.
+
+My only real gripe with DataStore is that it can't easily be used in Java, although I honestly don't think it's that bad.
+
+The implementation is saved on a dev / investigation branch [here](https://github.com/HubbleCommand/preftils/tree/investigation-data-store).
