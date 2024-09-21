@@ -36,3 +36,10 @@ There's a template to link google analytics, which I've removed, but see [here](
 - Translating, although I don't think it's possible with basic plan Github Pages
 - https://github.com/matiassingers/awesome-readme
 - https://github.com/jonatasemidio/multilanguage-readme-pattern
+- Project Side Bar
+
+		<div class="sidenav">
+			{% for project in site.projects %}
+				<a href="{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a>
+			{% endfor %}
+		</div>
