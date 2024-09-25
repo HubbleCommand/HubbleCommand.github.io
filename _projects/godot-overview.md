@@ -22,6 +22,7 @@ Godot, at this point, is a very popular [FOSS](https://en.wikipedia.org/wiki/Fre
 
 <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/godot/directional-sprites.md %}">Directional Sprites</a>
 
+<a href="{{ site.url }}{{ site.baseurl }}{% link _projects/godot/tips-and-tricks.md %}">Tips and Tricks</a>
 
 ## Before starting a project
 There are two very important quotes
