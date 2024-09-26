@@ -132,3 +132,11 @@ document.getElementById('report').onchange = async function() {
 	exportDailyStats(XLSX.utils.aoa_to_sheet(dates, standardOptions))
 }
 </script>
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
