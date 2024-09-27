@@ -2,7 +2,7 @@
 layout: post
 title: "UML Modeling"
 date: 2024-04-10
-last_modified_at: 2024-06-04
+last_modified_at: 2024-09-27
 ---
 
 Modelling software is probably the most important part of any software development.
@@ -106,6 +106,32 @@ flowchart TD
 ```
 
 The biggest drawback, however, is the limited types of diagrams. Component diagrams are still experimental, but their results are nothing compared to [PlantUML's component diagrams](https://plantuml.com/component-diagram).
+
+
+> ### Update as of 2024-09-27
+
+> After trying to add the new [XYChart](https://mermaid.js.org/syntax/xyChart.html) to [VSCore Run reports]({{ site.url }}{{ site.baseurl }}{% link _projects/vsc-ext-run.md %}), I found that newer versions of MermaidJS are [imported through modules](https://mermaid.js.org/config/usage.html)
+(read more [here](https://github.com/mermaid-js/mermaid/blob/develop/CHANGELOG.md)):
+
+> 
+```
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+</script>
+```
+
+> For usage in Markdown for GitHub Pages, it is also much easier to include mermaid in html `<pre>` tags:
+
+{% raw %}
+```{r}
+<pre class="mermaid">
+  graph LR
+      A --- B
+      B-->C[fa:fa-ban forbidden]
+      B-->D(fa:fa-spinner);
+</pre>
+```
+{% endraw %}
 
 ## What to use?
 
