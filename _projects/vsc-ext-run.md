@@ -41,7 +41,9 @@ Another nice thing about it is that when starting it with the Terminal option, I
 ## Reports generator
 As this extension is getting a lot of downloads, I wanted to see how it's usage is progressing.
 The Admin pannel allows you to download basic daily download stats, so I'll work with that.
-It gets exported to an Excel file, so [SheetJS](https://sheetjs.com/) was a logical choice for handling the data.
+
+## Parsing Excel
+The daily reports gets exported to an Excel file, so [SheetJS](https://sheetjs.com/) was a logical choice for handling the data.
 
 However, the biggest issue was date parsing.
 At first, date parsing wasn't working at all, but switching CDN made it work (read the first warning [here](https://docs.sheetjs.com/docs/getting-started/installation/standalone/)).
@@ -50,6 +52,14 @@ The documentation for Date, while present [here](https://docs.sheetjs.com/docs/c
 I originally tried working with JSON and sheets.
 However, JSON conversions will force a loss of typing at inconvenient stages, so it is much better to use [Arrays of Arrays](https://docs.sheetjs.com/docs/api/utilities/array/#array-of-arrays) to keep the relevant type unconverted for the longest amount of time.
 
+### Graphing
+The handling of the date is the first bit; the second bit is graphing.
+
+While I could do it in Excel or LibreOffice Calc, I also wanted the graph to be easily generated and be present in the README.
+Thankfully, I've already looked into this in my [post on UML modeling tools]({{ site.url }}{{ site.baseurl }}{% link _posts/2024-04-10-uml-modeling.md %}), and MermaidJS is still as good as ever.
+
+Below, you can upload multiple Excel files, which will be merged, exported, and a MermaisJS diagram will also be generated below, gr
+ouping the data by month.
 
 <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 
@@ -57,7 +67,15 @@ However, JSON conversions will force a loss of typing at inconvenient stages, so
 Merge selected Excel report files:
 <input type="file" id="report" name="reports" accept=".xlsx" multiple/>
 
-<script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.2.1/+esm'
+
+mermaid.initialize({
+	startOnLoad: true,
+	logLevel: "warn",
+	seciurityLevel: "loose"
+});
+
 const standardOptions = {
 	UTC: true, header: 0, blankrows: true, dateNF: 'dd"."mm"."yyyy'
 }
@@ -127,16 +145,47 @@ document.getElementById('report').onchange = async function() {
 
 	dates.unshift(["Date", "Installs", "Views"])	//Add header row
 
-	console.log(dates)
-
 	exportDailyStats(XLSX.utils.aoa_to_sheet(dates, standardOptions))
+
+	dates.shift() //remove header
+
+	var monthlyStats = []
+	for (let date of dates) {
+		const month = date[0].getUTCMonth()
+		const year = date[0].getUTCFullYear()
+		const id = `${year}-${month}`
+		const found = monthlyStats.find(e => e[0] === id)
+
+		if (found) {
+			found[1] += date[1]
+			found[2] += date[2]
+			continue
+		}
+		monthlyStats.push([
+			id,
+			date[1],
+			date[2]
+		])
+	}
+
+	drawDiagram(monthlyStats.reverse());
 }
+
+const drawDiagram = async function (stats) {
+    const graphElement = document.getElementById('report-graph');
+	var graphDefinition = `
+		xychart-beta
+			title "Monthly Stats"
+			x-axis [${stats.map((e) => e[0])}]
+			y-axis "Downloads"
+			line [${stats.map((e) => e[2])}]
+		`
+    const { svg } = await mermaid.render('gr', graphDefinition);
+    graphElement.innerHTML = svg;
+  };
 </script>
 
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
+<div id="report-graph" class="mermaid">
+	graph LR
+    A --- B
+</div>
