@@ -29,9 +29,11 @@ To summarize:
 - Mask: where the entity scans
 
 ### Detect overlap without colliding
-https://forum.godotengine.org/t/how-to-not-collide-physically-but-still-detect-collision/15648/2
+[Check this post](https://forum.godotengine.org/t/how-to-not-collide-physically-but-still-detect-collision/15648/2)
 
-You can't just use raw physics bodies. You will need an Area node to detect overlap
+You can't just use raw physics bodies : no amount of masking and layering fenagling will work.
+If RigidBodies or CharacterBodies are on the same mask / layer, they will collide.
+You will need an Area node to detect overlap.
 
 ### 2D floating physics for CharacterBody
 May not be the most obvious thing, but 2D physics actually has two modes: top-down / orthographic and side
