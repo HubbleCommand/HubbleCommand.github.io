@@ -18,7 +18,7 @@ preftils is self-described as a
   > Small helper library for working with Android SharedPreferences
 
 
-> I recently looked into DataStore, read the last section for more details
+> 2024-09-21: I recently looked into DataStore, read the last section for more details
 
 ## The problem
 There were many things I worked on at my previous job as an Android Software Engineer. From taking over the integration of some of the company's advanced libraries to implementing novel features with standard practices, the job presented itself with a fair amount of interesting, dynamic, and fun challenges.
@@ -62,9 +62,9 @@ inline fun <reified T> SharedPreferences.get(preference: Preference<T>): T {
 
 As this is a pure Kotlin library, Java support was secondary. However, simply removing the `inline` and `reified` keywords lets this work in Java (although with warnings of unchecked casts due to type erasure).
 
-> After some investigation, the performance difference between `inlining` or not is negligible. It will be removed in a later update to allow for Java interoperability.
-
-While this was nice, there was a major case that I hadn't covered: custom classes. As it stood, if anything besides a `String`, `Int`, `Long`, `Boolean`, or `Float`, it would throw an `IllegalArgumentException`. This was ignoring a fair amount of the original problem of multiple different parsing functions for the same classes (although there were certainly cleaner ways to do that as well).
+While this was nice, there was a major case that I hadn't covered: custom classes.
+As it stood, if anything besides a `String`, `Int`, `Long`, `Boolean`, or `Float`, was used for the default value, it would throw an `IllegalArgumentException`.
+This was ignoring a fair amount of the original problem of multiple different parsing functions for the same classes (although there were certainly cleaner ways to do that as well).
 
 Enter support for serialization. Continue reading below.
 
@@ -154,7 +154,7 @@ I should probably go over [what's new in Android Studio](https://developer.andro
 
 
 ## Adding Java support
-> By complete chance, I found why the Java21 stuff didn't work, and I can't believe that I hadn't even noticed the very obvious: Android does it's own compatability with the JVM, and currently only supports up to version 17. So obviously using Java 21 APIs wouldn't work! Dadoi!
+> By complete chance, I found why the Java 21 stuff didn't work, and I can't believe that I hadn't even noticed the very obvious: Android does it's own compatability with the JVM, and currently only supports up to version 17. So obviously using Java 21 APIs wouldn't work! Dadoi!
 
 Instead of trying to force the Kotlin to code to work with Java, I've decided to write the Java equivalent.
 
