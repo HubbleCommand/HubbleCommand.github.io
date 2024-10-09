@@ -71,6 +71,7 @@ func get_rect(polygon: PackedVector2Array) -> Rect2:
 
 We can, probably, cast a ray to the center of the rect.
 If there are overhangs, or the points aren't uniformely distributed, this will not work.
+Generally speaking, convex polygons should work, but there is no guarantee this will work for concave polygons.
 
 ```
 func get_closest_point_to_polygon_bounded(point: Vector2, polygon: PackedVector2Array, bounds: Rect2) -> Vector2:
