@@ -114,6 +114,16 @@ Loadout
 <iframe width="420" height="315" src="https://www.youtube.com/embed/77F4ZjmQ07U" frameborder="0" allowfullscreen></iframe>
 
 
+## Metadata
+<iframe width="420" height="315" src="https://www.youtube.com/embed/RnDap7hx8M4" frameborder="0" allowfullscreen></iframe>
+
+
+## Input Mapping
+https://github.com/EladKarni/InputMapperPresetLoader
+
+GUI Input Mapping Demo
+https://godotengine.org/asset-library/asset/2769
+
 ## Shaders
 Before working with shaders, you need to know more about matrices, or how the GPU actually draws to your screen.
 
@@ -185,6 +195,9 @@ Godot resource packs
 
 [ModIO](https://mod.io/) 
 [Steam Workshop](https://steamcommunity.com/workshop/)
+
+However, something I recently found is that GDScript can be evaluated dynamically!!!
+Check [this issue](https://github.com/godotengine/godot/issues/22814).
 
 
 ## Play Services
