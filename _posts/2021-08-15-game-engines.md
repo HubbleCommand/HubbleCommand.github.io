@@ -25,6 +25,7 @@ My only real gripe is that they made their own language for scripting: GDScript.
 Notes:
 - Godot 3.x doesn't support Blender's advanced PBR materials or nodes, as is blender-specific
 - Godot objects leave from the bottom of the tree up, with autoloads exiting the tree last
+- There are no UUIDs for assets or files, everything follows the folder structure, and it seems like it will stay that way. It has drawbacks, but is much simpler. Brought up [here](https://github.com/godotengine/godot-proposals/discussions/10869#discussioncomment-10892519).
 
 # #2 [Flax](https://flaxengine.com/)
 Flax originally started as Celelej back in 2014-2015, and has since been renamed after a complete rewrite of the engine from C# to C++. It's very performant, has very good visual fidelity especially compared to it's small memory and CPU footprint, and is still actively developed. Interestingly, it still has C# support for scripting, while allowing to write critical code in C++ out of the box. This is better than Godot's C++ support, which requires rebuilding the engine.
