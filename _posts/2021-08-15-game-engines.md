@@ -34,6 +34,7 @@ Flax originally started as Celelej back in 2014-2015, and has since been renamed
 There are only two downsides to the engine:
 - Unity-like 2D support (still renders in 3D space, but also lacks any 2D systems like 2D physics)
 - Clunky UI system
+> As of Flax 1.8, [there is now a proper UI editor](https://flaxengine.com/blog/flax-1-8-released/)!
 
 There are a few main reasons I consider Flax better than Unreal:
 - Choice of doing higher-level scripting in C#, or performant C++
@@ -41,6 +42,8 @@ There are a few main reasons I consider Flax better than Unreal:
 - Looks good out of the box, with lighting having no artifacts and requiring no special modeling (Unreal Engine 4 had horrible issues with light leak)
 
 While the Arizona Framework provides a really good starting point, the problem is that it's an entire framework, not something like Unreal's Lyra starter project. Arizona includes an impressive amount of work to streamline working with the engine (in particular the networking).
+
+Flax lacks Godot's animated sprites, it does support sprite sheets through the [Sprite Atlas](https://docs.flaxengine.com/manual/graphics/sprites/modifying-sprite-atlas.html).
 
 # #3 [Unreal Engine ](https://www.unrealengine.com/en-US)
 Unreal is obviously an incredibly powerful engine. There is no other engine that even comes close to feature parity. It gets constantly updated with industry firsts with features like Lumen and Nanite. If there was any teams to be considered "rock-star", it would be the incredibe teams behind Unreal.
