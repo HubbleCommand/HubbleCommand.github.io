@@ -2,7 +2,7 @@
 layout: post
 title: "Building Godot"
 date: 2024-01-09
-last_modified_at: 2024-06-05
+last_modified_at: 2024-10-11
 ---
 
 After a good two years of planning to make some contributions to Godot, I've finally gotten around to doing it.
@@ -70,3 +70,6 @@ To build for Windows, the best place to start is [the documentation](https://doc
 [Scoop](https://scoop.sh/) is the easiest way to setup the build system by far, and has a plethora of other things to simplify downloading and managing tools (i.e. Jekyll). It installs python, jekyll, g++...
 
 Recently, using the `dev_build=yes` option causes the build to not be able to run on the targeted platform. Simply remove it from `tasks.json` for now, and make sure to make the corresponding name change in `launch.json` (remove `dev` from the `program` name).
+
+To follow the [engine c++ style guides](https://docs.godotengine.org/en/stable/contributing/development/code_style_guidelines.html), it is recommended to use `clang-format`
+Go to the [latest llvm release](https://github.com/llvm/llvm-project/releases), download the build for your platform (i.e. `clang+llvm-x-x86_64-pc-windows-msvc.tar.xz` for windows), extract, and take the clang-format.exe file and add it to your `PATH`.
