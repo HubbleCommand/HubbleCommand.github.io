@@ -22,7 +22,20 @@ Godot, at this point, is a very popular [FOSS](https://en.wikipedia.org/wiki/Fre
 
 <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/godot/directional-sprites.md %}">Directional Sprites</a>
 
-<a href="{{ site.url }}{{ site.baseurl }}{% link _projects/godot/tips-and-tricks.md %}">Tips and Tricks</a>
+<a href="{{ site.url }}{{ site.baseurl }}{% link _projects/godot/geometry-ops.md %}">Geometry Operations</a>
+
+<a href="{{ site.url }}{{ site.baseurl }}{% link _projects/godot/image-rotation.md %}">Image Rotation</a>
+
+
+## Engine Contributions
+Building the engine is easiest done with scoop, see the first note [here](https://docs.godotengine.org/en/stable/contributing/development/compiling/compiling_for_windows.html)
+
+Important Godot pages
+[Contributing Code](https://docs.godotengine.org/en/stable/contributing/ways_to_contribute.html#contributing-code)
+[Best practices](https://docs.godotengine.org/en/stable/contributing/development/best_practices_for_engine_contributors.html)
+[Engine Development](https://docs.godotengine.org/en/stable/contributing/development/index.html#buildsystem-and-work-environment)
+[PR Workflow](https://docs.godotengine.org/en/stable/contributing/workflow/pr_workflow.html)
+
 
 ## Before starting a project
 There are two very important quotes
