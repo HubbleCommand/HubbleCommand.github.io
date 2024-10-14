@@ -48,6 +48,10 @@ Before emarking on any large project, I recommend watching this:
 
 It's very important to understand the scale of a project as well as your own skills, and time you can commit, to avoid burning yourself out.
 
+<iframe width="420" height="315" src="https://www.youtube.com/embed/v7500ewcCIo" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Edv-xI_29AE" frameborder="0" allowfullscreen></iframe>
+
 ## Starting
 To my recent surprise, when I tried to fork Godot, I discovered that I already had a fork. I must have forked it years ago to contribute, I'm pretty sure to add some image rotation improvements, but life got in the way.
 
