@@ -41,17 +41,17 @@ Prepare for ramblings
             <th>
                 <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/preftils.md %}">Preftil</a>
                 <a>
-                    {% assign preftil_icons="android,kotlin,java" | split: "," %}
+                    {% assign preftil_icons="android,kotlin,java,flutter,dart" | split: "," %}
                     {% include /components/devicon.html icons=preftil_icons %}
                 </a>
             </th>
             <th>
+                <a href="https://github.com/hubblecommand/preftils/blob/master/LICENSE">
+                    <img alt="Static Badge" src="https://img.shields.io/github/license/HubbleCommand/preftils.svg?color=blue"></a>
                 <a href="https://jitpack.io/#hubblecommand/preftils">
                     <img alt="Static Badge" src="https://jitpack.io/v/HubbleCommand/preftils.svg"></a>
                 <a href="https://jitpack.io/#hubblecommand/preftils">
                     <img alt="Static Badge" src="https://jitpack.io/v/HubbleCommand/preftils/month.svg"></a>
-                <a href="https://github.com/hubblecommand/preftils/blob/master/LICENSE">
-                    <img alt="Static Badge" src="https://img.shields.io/github/license/HubbleCommand/preftils.svg?color=blue"></a>
             </th>
         </tr>
     </tbody>

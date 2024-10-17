@@ -4,8 +4,8 @@ title: "preftils - Android Preferences Utility"
 date: 2024-05-11
 categories: ["Android"]
 programming-languages: ["Kotlin", "Java"]
-icons: ["android", "kotlin", "java"]
-last_modified_at: 2024-09-21
+icons: ["android", "kotlin", "java", "flutter", "dart"]
+last_modified_at: 2024-10-17
 active: true
 ---
 
@@ -261,3 +261,100 @@ That is why I will not be adding it into the main package: while it was neat to 
 My only real gripe with DataStore is that it can't easily be used in Java, although I honestly don't think it's that bad.
 
 The implementation is saved on a dev / investigation branch [here](https://github.com/HubbleCommand/preftils/tree/investigation-data-store).
+
+
+## [Flutter version](https://github.com/HubbleCommand/preftils_fl)
+
+<details markdown ="1">
+<summary>Code<blockquote>Expand if you want to see the original code that was based on the Java and Kotlin versions</blockquote></summary>
+
+```
+class Preference<T>{
+  final String key;
+  final T defaultValue;
+
+  Preference(this.key, this.defaultValue);
+}
+
+extension Preftils on SharedPreferences {
+  static Future<T> get<T>(Preference<T> preference, {T? defaultValue}) {
+    return SharedPreferences.getInstance().then((SharedPreferences prefs) {
+      switch (preference.defaultValue) {
+        case int _: return prefs.getInt(preference.key) as T? ?? defaultValue ?? preference.defaultValue;
+        case bool _: return prefs.getBool(preference.key) as T? ?? defaultValue ?? preference.defaultValue;
+        case double _: return prefs.getDouble(preference.key) as T? ?? defaultValue ?? preference.defaultValue;
+        case String _: return prefs.getString(preference.key) as T? ?? defaultValue ?? preference.defaultValue;
+        case List<String> _: return prefs.getStringList(preference.key) as T? ?? defaultValue ?? preference.defaultValue;
+      }
+      return defaultValue ?? preference.defaultValue;
+    });
+  }
+
+  static Future<Object> set<T>(Preference<T> preference, T value) {
+    return SharedPreferences.getInstance().then((SharedPreferences prefs) {
+      switch (preference.defaultValue) {
+        case int _:
+          return prefs.setInt(preference.key, value as int);
+        case bool _:
+          return prefs.setBool(preference.key, value as bool);
+        case double _:
+          return prefs.setDouble(preference.key, value as double);
+        case String _:
+          return prefs.setString(preference.key, value as String);
+        case const (List<String>) :
+          return prefs.setStringList(preference.key, value as List<String>);
+      }
+      return Future<void>;
+    });
+  }
+}
+```
+</details>
+
+A drawback is that there is no [built-in serialization](https://docs.flutter.dev/data-and-backend/serialization/json) support.
+Sure, there's the [json_serializable](https://pub.dev/packages/json_serializable) package, but it's not built-in.
+Unfortunately, this isn't even a problem compared to what comes next.
+
+While it is nice that Dart has no [type erasure](https://dart.dev/language/generics), there is one major problem: the concrete type of the generic is not enforced unless explicitely stated in *every* method call.
+
+What do I mean? With my initial implementation similar to the Java and Kotlin versions, I did the following for getting preferences:
+```
+extension Preftils on SharedPreferences {
+  static Future<T> get<T>(Preference<T> preference, {T? defaultValue}) {
+    return SharedPreferences.getInstance().then((SharedPreferences prefs) {
+      switch (preference.defaultValue) {
+        case int _: return prefs.getInt(preference.key) as T? ?? defaultValue ?? preference.defaultValue;
+    ...
+```
+
+Now using this is very easy:
+```
+Preference<int> intpref = Preference("integer", 3);
+Preftils.set(intpref, 7);
+```
+
+Unlike the Java and Kotlin versions, however, the following ALSO works, although it will lead to a runtime crash:
+```
+Preftils.set(intpref, "a");
+```
+
+The only way to enfore the type is to declare the type:
+```
+Preftils.set<int>(intpref, 3);
+```
+
+Which is the same as doing the original, and is of no help at all:
+```
+SharedPreferences.setInt("integer", 3)
+```
+
+However, all was not lost.
+I pondered for a second, and thought that maybe the concrete type of the generic was lost due to the method being an extension on another class.
+What would happen if I added the setter & getters directly to the `Preference` class?
+There shouldn't be a way for the concrete type to get lost by the class, while we're still in the class, right?
+
+And that's the case!
+
+By changing those functions from being extensions of `SharedPreference` to being members of `Preference`, we keep the concrete type throughout.
+You can view it [here](https://github.com/HubbleCommand/preftils_fl/blob/master/lib/preftils.dart).
+
