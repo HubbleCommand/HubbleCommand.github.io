@@ -5,7 +5,7 @@ date: 2024-05-11
 categories: ["Android"]
 programming-languages: ["Kotlin", "Java"]
 icons: ["android", "kotlin", "java", "flutter", "dart"]
-last_modified_at: 2024-10-17
+last_modified_at: 2024-10-18
 active: true
 ---
 
@@ -19,6 +19,8 @@ preftils is self-described as a
 
 
 > 2024-09-21: I recently looked into DataStore, read the last section for more details
+
+> 2024-10-18: Flutter version
 
 ## The problem
 There were many things I worked on at my previous job as an Android Software Engineer. From taking over the integration of some of the company's advanced libraries to implementing novel features with standard practices, the job presented itself with a fair amount of interesting, dynamic, and fun challenges.
@@ -318,7 +320,7 @@ Unfortunately, this isn't even a problem compared to what comes next.
 While it is nice that Dart has no [type erasure](https://dart.dev/language/generics), there is one major problem: the concrete type of the generic is not enforced unless explicitely stated in *every* method call.
 
 What do I mean? With my initial implementation similar to the Java and Kotlin versions, I did the following for getting preferences:
-```
+```dart
 extension Preftils on SharedPreferences {
   static Future<T> get<T>(Preference<T> preference, {T? defaultValue}) {
     return SharedPreferences.getInstance().then((SharedPreferences prefs) {
@@ -328,23 +330,23 @@ extension Preftils on SharedPreferences {
 ```
 
 Now using this is very easy:
-```
+```dart
 Preference<int> intpref = Preference("integer", 3);
 Preftils.set(intpref, 7);
 ```
 
 Unlike the Java and Kotlin versions, however, the following ALSO works, although it will lead to a runtime crash:
-```
+```dart
 Preftils.set(intpref, "a");
 ```
 
 The only way to enfore the type is to declare the type:
-```
+```dart
 Preftils.set<int>(intpref, 3);
 ```
 
 Which is the same as doing the original, and is of no help at all:
-```
+```dart
 SharedPreferences.setInt("integer", 3)
 ```
 
@@ -357,4 +359,79 @@ And that's the case!
 
 By changing those functions from being extensions of `SharedPreference` to being members of `Preference`, we keep the concrete type throughout.
 You can view it [here](https://github.com/HubbleCommand/preftils_fl/blob/master/lib/preftils.dart).
+
+
+### Adding serialization support
+As with the Java and Kotlin versions, the main strength of such systems comes from serialization of custom classes.
+
+However, here we run into a problem: [Flutter doesn't have serialization](https://docs.flutter.dev/data-and-backend/serialization/json#is-there-a-gsonjacksonmoshi-equivalent-in-flutter) as Flutter [doesn't support reflection](https://docs.flutter.dev/resources/faq#does-flutter-come-with-a-reflection-mirrors-system) (although dart *does*).
+The reason given is that it is hard to do tree shaking to remove unused code, however both Android (through Java and Kotlin) and iOS (with Swift) support reflection, so I'm not too sure about that excuse.
+
+Now, dart does have [dart:convert](https://api.dart.dev/stable/3.5.4/dart-convert/dart-convert-library.html), but this isn't class serialization, that's just general serialization. [json_serializable](https://docs.flutter.dev/data-and-backend/serialization/json#setting-up-json_serializable-in-a-project) does exist, but this comes with the same and other issues.
+
+While [source_gen](https://github.com/dart-lang/source_gen) is neat, and might *possibly* be an approach here to generate helper code (which is what the json_serializable package does), we still need a way to know if a class is serializable, which neither of those solutions give.
+
+As we can't use reflection in Flutter (to even check if a class has certain methods), I'm just going back to basics: creating a Codable interface. If you read the colapsed section of my initial Kotlin implementation (why am I asking this, no one reads this anyways), this will seem familiar because it's the exact same approach.
+
+While there are better ways to do it in Kotlin and Java, I am working with the limitations of Flutter now.
+
+So, here it is:
+```dart
+abstract class Codable {
+  String encode();
+  Codable decode(String data);
+}
+
+class Preference<T>{
+  ...
+  T getSync(SharedPreferences prefs, {T? defaultValue}) {
+    switch (this.defaultValue) {
+  ...
+      case Codable codable:
+        String? pref = prefs.getString(key);
+        if (pref == null) { break; }
+        try { return codable.decode(pref) as T; }
+  ...
+
+  Future<bool> set(T value, {SharedPreferences? prefs}) async {
+    SharedPreferences p = prefs ?? await SharedPreferences.getInstance();
+    switch (defaultValue) {
+  ...
+      case Codable codable:
+        return p.setString(key, codable.encode());
+  ...
+```
+
+While not *perfect*, I would prefer `decode` to be static, Dart (and many other languages for that matter) don't allow overriding static methods.
+
+*However*, one could possibly have a factory class to make the codables. While this may not seem to solve the issue of how to get it statically, the solution is to pass this factory to the Preference class, like so:
+
+```dart
+abstract class CodableFactory {
+  Codable decode(String data);
+}
+
+class Preference<T>{
+  final String key;
+  final T defaultValue;
+  final CodableFactory? decodeFactory;
+  ...
+
+  T getSync(SharedPreferences prefs, {T? defaultValue}) {
+  switch (this.defaultValue) {
+    case Codable codable:
+      if (decodeFactory == null) {
+        throw CodableException("Pass a CodableFactory to decode your Codable class");
+      }
+      decodeFactory.decode(string)
+      ...
+  }
+```
+
+However, I'm not really a fan of that.
+It's creating a dependency between two otherwise unrelated classes.
+It's not a very serious dependency, not just because it's Dependency Injection but also because `Preference` already knows of `Codable`.
+Nonetheless, it feels awkward.
+
+Regardless, an instance of the variable is always available to decode with through the default value of the `Preference` class, giving all the more reason to keep it simple.
 
