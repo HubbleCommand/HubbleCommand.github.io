@@ -9,6 +9,60 @@ categories  : ["GameDev", "Godot"]
 ## Distance between points
 This is already part of the engine, and part of the [Vector2](https://docs.godotengine.org/en/stable/classes/class_vector2.html#class-vector2-method-distance-to) and [Vector3](https://docs.godotengine.org/en/stable/classes/class_vector3.html#class-vector3-method-distance-to) classes.
 
+
+
+## Rect to Square
+Only useful if you need to intersect a Rect with another shape, i.e. a polygon.
+Then, you can use the polygon functions of [`Geometry2D`](https://docs.godotengine.org/en/stable/classes/class_geometry2d.html).
+
+```
+static func rect_to_square(rect: Rect2) -> PackedVector2Array:
+	return PackedVector2Array([
+		Vector2(rect.position),
+		Vector2(rect.position.x + rect.size.x, rect.position.y),
+		Vector2(rect.end),
+		Vector2(rect.position.x, rect.position.y + rect.size.y),
+	])
+```
+
+## Segment intersects line
+Geometry2D has [line_intersects_line](https://docs.godotengine.org/en/stable/classes/class_geometry2d.html#class-geometry2d-method-line-intersects-line) and [segment_intersects_segment](https://docs.godotengine.org/en/stable/classes/class_geometry2d.html#class-geometry2d-method-segment-intersects-segment), but nothing to check if a segment intersects a line.
+
+```
+static func segment_intersects_line(from_line: Vector2, dir_line: Vector2, s1: Vector2, s2: Vector2) -> Variant:
+	var to_line = dir_line + from_line
+	
+	#If either point is on the line
+	var b_over_a = dir_line.x / dir_line.y
+	var c = from_line.y - (b_over_a * from_line.x)
+	
+	#Using y = mx + c and plugging s1 and s2 into it...
+	var s1_intersects = s1.y == (b_over_a * s1.x) + c
+	var s2_intersects = s2.y == (b_over_a * s2.x) + c
+	
+	#https://math.stackexchange.com/a/4003918
+	var p1	#s1
+	var p2	#s2
+	var p3	#from_line
+	var p4	#to_line
+	
+	#var calc = ((p4 - p3) * (p1 - p3)) * ((p4 - p3) * (p2 - p3))
+	var calc = ((to_line - from_line) * (s1 - from_line)) * ((to_line - from_line) * (s2 - from_line))
+	var intersects = calc <= 0
+	
+	if intersects:
+		#This assumption is SO WRONG
+		#return Geometry2D.segment_intersects_segment(from_line, to_line, s1, s2)
+		#If the segment intersects, then the LINE of the segment must intersect, so can compare LINES, not SEGMENTS
+		#return Geometry2D.line_intersects_line(from_line, dir_line, s1, s2 - s1)
+		var intersection = Geometry2D.line_intersects_line(from_line, dir_line, s1, s2 - s1)
+		if intersection == null:
+			print("BAD")	#above we check if there is an intersection... so if there isn't once, something is fucky...
+		return intersection
+	
+	return null
+```
+
 ## Nearest point on polygon from point
 > [Full project with code][1]
 
@@ -124,3 +178,8 @@ func test_polygon(name: String, point: Vector2, polygon: PackedVector2Array):
 However, after running these tests, the unbounded method is actually much faster!
 4 to 10 times faster!
 I was certainly surprised by this result.
+
+
+## Useless intersections
+
+Things like `line_intersects_rect` and `segment_intersects_rect` can be done with [`Geometry2D.intersect_polyline_with_polygon`](https://docs.godotengine.org/en/stable/classes/class_geometry2d.html#class-geometry2d-method-intersect-polyline-with-polygon).
