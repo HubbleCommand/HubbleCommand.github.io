@@ -270,7 +270,7 @@ The implementation is saved on a dev / investigation branch [here](https://githu
 <details markdown ="1">
 <summary>Code<blockquote>Expand if you want to see the original code that was based on the Java and Kotlin versions</blockquote></summary>
 
-```
+```dart
 class Preference<T>{
   final String key;
   final T defaultValue;
@@ -434,4 +434,39 @@ It's not a very serious dependency, not just because it's Dependency Injection b
 Nonetheless, it feels awkward.
 
 Regardless, an instance of the variable is always available to decode with through the default value of the `Preference` class, giving all the more reason to keep it simple.
+
+
+#### Codable and Dart errors
+A final note about the Dart language. If you looked at the implementation of `get`, you'll see it has the following siganture:
+
+```dart
+Future<T> get({SharedPreferencesAsync? prefs, T? defaultValue}) async
+```
+
+But, it can throw when decoding a Codable:
+```dart
+try {
+  return codable.decode(pref) as T;
+} finally {
+  throw CodableException("Failed to decode");
+}
+```
+
+This is an issue I have with Dart itself: any function can throw.
+Most other high-level OOP languages, functions that can throw an error should, or in most cases *must* be annotated as throwable.
+Dart has no such requirement.
+As any function can throw, that means that there is no way to annotate it as such.
+I don't particularly like this, but that's just how the language works.
+
+
+### Supporting `SharedPreferencesAsync/WithCache`
+So the last step is looking at `shared_preferences`' new `SharedPreferencesAsync/WithCache` system.
+The only difference is that on Android, it uses `DataStore` instead of `SharedPreferences` (there is a section above about the topic).
+All the other platforms work the same (as far as I can tell).
+
+So, I created a new type of `Preference` helper class to work with the newer system.
+Why a new Preference class for this?
+Because the values are stored in different ways, and cannot be retrieved accross these different systems (for all platforms, not just Android).
+
+For more info on this and how to migrate, read [this issue](https://github.com/flutter/flutter/issues/150732).
 
