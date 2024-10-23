@@ -165,7 +165,16 @@ Good write-ups on this topic:
 <iframe width="420" height="315" src="https://www.youtube.com/embed/6n24E70rP2s" frameborder="0" allowfullscreen></iframe>
 
 
-## Moving to GDExtension
+## Moving to [GDExtension](https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html#doc-gdextension-cpp-example)
 As mentioned at the beginning, it should be possible to do this without modifying the engine itself.
 This is because Godot's image has a public [data](https://docs.godotengine.org/en/stable/classes/class_image.html#class-image-property-data) property,
 so it should be possible to just set this.
+
+However, this comes with a major drawback: you lose the in-memory modifiability of the image data.
+
+This isn't problematic for some types of rotating, where we may not even want to write back to the same image.
+
+However, for cropping and shearing, we lose a massive amount of performance, as the benefit of these two is that they can be done in-memory.
+This is not possibly when using GDExtension, as both [`get_data()`](https://docs.godotengine.org/en/stable/classes/class_image.html#class-image-method-get-data) and [`data`](https://docs.godotengine.org/en/stable/classes/class_image.html#class-image-property-data) return copies of the image data, not references.
+
+As such, dropping this part except for rotation (maybe).
