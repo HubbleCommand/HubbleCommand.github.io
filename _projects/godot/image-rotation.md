@@ -133,6 +133,9 @@ You create a temporary image to act as a buffer, and read pixels from the origin
 
 Yay.
 
+Area Mapping is sort of interesting, and you can read more on it [here](http://www.leptonica.org/rotation.html), but it's basically a niche variant of reverse sampling more tuned to specific image types.
+
+
 ### Sampling memory optimisations
 When using any sampling technique, you need a buffer to write the image to.
 Basic implementations use a buffer the same size of the image, and reducing this size is generally difficult, albeit possible.
