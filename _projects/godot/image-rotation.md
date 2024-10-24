@@ -22,6 +22,8 @@ TODO this is NOT TRUE!!! you can access the data buffer directly, this could be 
 
 For testing, I fittingly took [TV Test Cards](https://en.wikipedia.org/wiki/Test_card) to perform rotations on. Very easy to see if anything was done wrong.
 
+[This is the project I use to play around with my custom Godot builds](https://github.com/HubbleCommand/godot-custom-playground).
+
 
 ## Image rotation theory
 An image is, effectively, a 2-dimensional matrix (even if it is stored as a 1-dimensional array).
