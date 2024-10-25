@@ -6,6 +6,7 @@ categories  : ["GameDev", "Godot"]
 #start-date  : 
 ---
 
+> Note that due to issues with shearing, I am not opening a PR for my work atm
 
 Godot's built-in image rotation functions are lacking.
 You can only rotate [90](https://docs.godotengine.org/en/stable/classes/class_image.html#class-image-method-rotate-90) or [180](https://docs.godotengine.org/en/stable/classes/class_image.html#class-image-method-rotate-180) degrees.
