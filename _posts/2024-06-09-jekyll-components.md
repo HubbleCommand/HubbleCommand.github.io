@@ -2,8 +2,10 @@
 layout: post
 title: "Jekyll Components"
 date: 2024-06-09
+last_modified_at: 2024-11-18
 ---
 
+> 2024-11-18: added section on Video Group component
 
 In my recent post about [Badges and Icons]({% post_url 2024-06-07-badges-icons %}), I ended up needing to add a lot of icons from [Devicon](https://devicon.dev/), but I was tired of having to copy-paste so many `<i>` elements. It made the source of my pages more difficult to write in, and bloated them with a lot of duplicate `<i>` with only a few characters of difference for changing parts of the icon ID.
 
@@ -48,3 +50,17 @@ Passed parameters can be accessed in the 'component' like so
 ```
 
 See the file [here]([`_includes/components/devicon`](https://github.com/HubbleCommand/HubbleCommand.github.io/blob/master/_includes/components/devicon.html)) with usage [here](https://github.com/HubbleCommand/HubbleCommand.github.io/blob/master/index.md?plain=1#L25).
+
+
+## Video group component
+There is a problem that quite a few of the pages in this site have: too many embeded videos.
+Past 5, there is noticible lag for the full page to load.
+In many cases, there is no need to have so many embeds, as they are all covering the same topic.
+
+To address this, I created a small [`video-group`](https://github.com/HubbleCommand/HubbleCommand.github.io/blob/master/_includes/components/video-group.html) component.
+
+It basically allows creating mini playlist groups.
+A list of the thumbnails is created with a single `<iframe>`.
+Whenever one of the thumbnails is clicked, it changes the `src` of the `<iframe>`.
+
+This has improved the loading of quite a few pages significantly.
