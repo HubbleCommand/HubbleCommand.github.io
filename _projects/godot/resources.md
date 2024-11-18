@@ -18,19 +18,12 @@ Long functions and code duplications should be extracted into other functions.
 Generally, use composition.
 This is even according to the [official documentation](https://docs.godotengine.org/en/3.2/tutorials/misc/state_design_pattern.html)!
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/RnjTYBhAcfA" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/GWYhtksrmhE" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/hxGOiiR9ZKg" frameborder="0" allowfullscreen></iframe>
+{% assign general_design_ids="RnjTYBhAcfA,GWYhtksrmhE,hxGOiiR9ZKg" | split: "," %}
+{% include /components/video-group.html id="general_design" ids=general_design_ids %}
 
 Godot specific
-<iframe width="420" height="315" src="https://www.youtube.com/embed/ukj5jg8_VU4" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/VX16i7t_v3Y" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/74y6zWZfQKk" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/rCu8vQrdDDI" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/w7eSSpiJv2U" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/JJid46XzW8A" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/p_IvmDm-Ywk" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/4az0VX9ApcA" frameborder="0" allowfullscreen></iframe>
+{% assign godot_specific_ids="ukj5jg8_VU4,VX16i7t_v3Y,74y6zWZfQKk,rCu8vQrdDDI,w7eSSpiJv2U,JJid46XzW8A,p_IvmDm-Ywk,4az0VX9ApcA" | split: "," %}
+{% include /components/video-group.html id="gd" ids=godot_specific_ids %}
 
 ## Blurry sprites / textures
 Fix blurry Sprites: use Nearest filtering mode (can set in Project -> Render -> Textures or on each node individually).
@@ -39,16 +32,14 @@ Depending on the hierarchy of your scene tree (i.e. nested viewports), you may n
 Try to do this at the highet level possible.
 
 ## Character controller-esque
-<iframe width="420" height="315" src="https://www.youtube.com/embed/ZaEzjnoIy3M" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/5FWzWrK6jLM" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/VV4GKY7LKlA" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/bn3ZUCZ0vMo" frameborder="0" allowfullscreen></iframe>
 
+{% assign character_controller_ids="ZaEzjnoIy3M,5FWzWrK6jLM,VV4GKY7LKlA,bn3ZUCZ0vMo" | split: "," %}
+{% include /components/video-group.html id="charcontr" ids=character_controller_ids %}
 
 ### State Machines
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/VtJXqRsFezY" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/vZHzMO90IwQ" frameborder="0" allowfullscreen></iframe>
+{% assign state_machine_ids="VtJXqRsFezY,vZHzMO90IwQ" | split: "," %}
+{% include /components/video-group.html id="state_machine" ids=state_machine_ids %}
 
 Design patterns are, in general, the more powerful tools in a SE's toolbelt. This is because they solve common issues in easy and maintainable ways.
 
@@ -61,8 +52,7 @@ State machines in particular are very useful, and should be your go-to pattern.
 
 
 ## Remote Android Debugging
-<iframe width="420" height="315" src="https://www.youtube.com/embed/AUWktaoYucQ" frameborder="0" allowfullscreen></iframe>
-To turn on Android debugging with logging, go to Debug -> Depploy with Remote Debug
+To turn on Android debugging with logging, go to Debug -> Depploy with Remote Debug. See [this video](https://www.youtube.com/watch?v=AUWktaoYucQ) for more.
 
 
 ## Theming
@@ -81,80 +71,44 @@ Theming is Godot's system for doing UI skinning and standardizing your UI easily
 
 [Good post on Resources best practices](https://forum.godotengine.org/t/resources-best-practice-and-scalability/43504)
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/aPXvoWVabPY" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/nzDv4xFIJnI" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/vzRZjM9MTGw" frameborder="0" allowfullscreen></iframe>
-
 Ironically, the first tip in [this video](https://www.youtube.com/watch?v=5R0ajAElEgk) is somewhat bad practice, and could be fixed with resources.
+
+{% assign scriptobj_ids="aPXvoWVabPY,nzDv4xFIJnI,vzRZjM9MTGw" | split: "," %}
+{% include /components/video-group.html id="scriptobjs" ids=scriptobj_ids %}
+
 
 ## Inventory-like
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/pVDUdXYa38I" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/X3J0fSodKgs" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/UUzuUzPVNrE" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/V79YabQZC1s" frameborder="0" allowfullscreen></iframe>
-
-
-
-Weapon system 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/SB0QrnI_-IQ" frameborder="0" allowfullscreen></iframe>
-
-Loadout 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/vNBKHbkBT1E" frameborder="0" allowfullscreen></iframe>
+{% assign inventory_ids="SB0QrnI_-IQ,vNBKHbkBT1E,pVDUdXYa38I,X3J0fSodKgs,UUzuUzPVNrE,V79YabQZC1s" | split: "," %}
+{% include /components/video-group.html id="inventory" ids=inventory_ids %}
 
 
 ## Procedural Animation
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/qlfh_rv6khY" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/G_seJ2Yg1GA" frameborder="0" allowfullscreen></iframe>
+{% assign procanim_ids="qlfh_rv6khY,G_seJ2Yg1GA" | split: "," %}
+{% include /components/video-group.html id="procanim" ids=procanim_ids %}
+
 
 ## Pixellation
-<iframe width="420" height="315" src="https://www.youtube.com/embed/Mg_V27arKdg" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/vubxL52NlAY" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/77F4ZjmQ07U" frameborder="0" allowfullscreen></iframe>
+
+{% assign pixellation_ids="Mg_V27arKdg,vubxL52NlAY,77F4ZjmQ07U" | split: "," %}
+{% include /components/video-group.html id="pixellation_shader" ids=pixellation_ids %}
 
 
 ## Metadata
-<iframe width="420" height="315" src="https://www.youtube.com/embed/RnDap7hx8M4" frameborder="0" allowfullscreen></iframe>
+Many engines have a system of metadata.
 
+However, it does appear a bit more powerful in Godot, as you can see [here](https://www.youtube.com/watch?v=RnDap7hx8M4). Do note that this feels very much like a Godot-specific thing, and even then I don't recommend using it this way. Using things like Groups is still, generally, better, especially when trying to query.
 
-## Input Mapping
-https://github.com/EladKarni/InputMapperPresetLoader
-
-GUI Input Mapping Demo
-https://godotengine.org/asset-library/asset/2769
 
 ## Shaders
 Before working with shaders, you need to know more about matrices, or how the GPU actually draws to your screen.
 
 [The Transformation Matrix for 2D Games](https://www.alanzucconi.com/2016/02/10/tranfsormation-matrix/)
-https://www.alanzucconi.com/2017/07/15/cd-rom-shader-2/
-
-In Video Games, The Player Never Moves
-https://www.youtube.com/watch?v=wiYTxjJjfxs 
-
-Homogeneous Coordinates
-https://www.youtube.com/watch?v=MQdm0Z_gNcw
 
 
-Quick Understanding of Homogeneous Coordinates for Computer Graphics
-https://www.youtube.com/watch?v=o-xwmTODTUI
-
-Perspective Projection Matrix
-EqNcqBdrNyI
-
-3D Software Rendering Graphics Pipeline
-7qUuzRY5YwI
-
-PlayWithFurcifer (VERY good for basics)
-https://www.youtube.com/watch?v=BZp8DwPdj4s
-https://www.youtube.com/watch?v=1pJyYtBAHks
-
-3 MUST-KNOW Shader Effects for 2D Environment in Godot 4
-https://www.youtube.com/watch?v=L97Y12TV7Ro
-
-
-<iframe width="420" height="315" src="https://www.youtube.com/embed/nyFzPaWAzeQ" frameborder="0" allowfullscreen></iframe>
+{% assign shader_intro_ids="wiYTxjJjfxs,MQdm0Z_gNcw,o-xwmTODTUI,EqNcqBdrNyI,7qUuzRY5YwI,L97Y12TV7Ro,nyFzPaWAzeQ,BZp8DwPdj4s,1pJyYtBAHks,fEQUPSV24fI,jH0MD8obOCQ" | split: "," %}
+{% include /components/video-group.html id="shader_intro" ids=shader_intro_ids %}
 
 Sample shader assets:
 [GDQUest Shaders](https://github.com/gdquest-demos/godot-shaders)
@@ -163,6 +117,7 @@ Sample shader assets:
 [Ultimate Retro Shader Collection](https://godotengine.org/asset-library/asset/2989)
 [Grid Shader Tutorial](https://godotshaders.com/shader/grid-shader-tutorial/)
 [Godot Retro](https://github.com/ahopness/GodotRetro)
+[CD ROM shader](https://www.alanzucconi.com/2017/07/15/cd-rom-shader-2/)
 
 <blockquote class="reddit-embed-bq" style="height:500px" data-embed-theme="dark" data-embed-height="559"><a href="https://www.reddit.com/r/godot/comments/hmj63q/having_fun_learning_about_shaders/">Having fun learning about shaders!</a><br> by<a href="https://www.reddit.com/user/onsclom/">u/onsclom</a> in<a href="https://www.reddit.com/r/godot/">godot</a></blockquote><script async="" src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
 
@@ -172,10 +127,6 @@ Sample shader assets:
 
 [Variable rate shading](https://github.com/godotengine/godot-demo-projects/tree/master/3d/variable_rate_shading) (NVIDIA feature that changes the rate shading is calculated in different regions of the scene to increase performance)
 
-
-<iframe width="420" height="315" src="https://www.youtube.com/embed/fEQUPSV24fI" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/jH0MD8obOCQ" frameborder="0" allowfullscreen></iframe>
-
 Shader stuff for [refraction](https://forum.godotengine.org/t/getting-both-the-frontfacing-and-backfacing-normals-on-the-front-faces/62382)
 
 
@@ -183,9 +134,9 @@ Shader stuff for [refraction](https://forum.godotengine.org/t/getting-both-the-f
 Light doesn't work the same at all as in 3D.
 See the paragraph after [this](https://docs.godotengine.org/en/stable/tutorials/2d/2d_lights_and_shadows.html#id4) image.
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/jXCEgW_Mgx8" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/kM71HecDOvM" frameborder="0" allowfullscreen></iframe>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/0GToqNid43U" frameborder="0" allowfullscreen></iframe>
+A quick video overview can be found [here](https://www.youtube.com/watch?v=jXCEgW_Mgx8).
+
+A custom lighting solution ca be found [here](https://www.youtube.com/watch?v=kM71HecDOvM), although it appears similar to the way the built-in system works.
 
 
 ## Moddability
@@ -201,13 +152,15 @@ Check [this issue](https://github.com/godotengine/godot/issues/22814).
 
 
 ## Play Services
-<iframe width="420" height="315" src="https://www.youtube.com/embed/YaG1O5kDsho" frameborder="0" allowfullscreen></iframe>
+Video overview [here](https://www.youtube.com/watch?v=YaG1O5kDsho).
 [Asset](https://godotengine.org/asset-library/asset/2440)
 
 ## Multiplayer
-
-<iframe width="420" height="315" src="https://www.youtube.com/embed/_ItA2r69c" frameborder="0" allowfullscreen></iframe>
+A good overview can be found [here](https://www.youtube.com/watch?v=_ItA2r69c)
 
 W4 is a company that aims to improve the Godot ecosystem. 
 Their two first major projects were integrating Console support, and [multiplayer](https://sdk.w4.gd/).
 
+
+## Hot update
+https://www.reddit.com/r/godot/comments/1fhcsw3/tutorial_how_to_implement_a_hot_update_mechanism/
