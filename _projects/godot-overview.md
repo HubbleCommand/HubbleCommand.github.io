@@ -43,14 +43,11 @@ There are two very important quotes
 
 <blockquote class="reddit-embed-bq" data-embed-theme="dark" data-embed-height="220"><a href="https://www.reddit.com/r/godot/comments/adwd9h/comment/edkust0/">Comment</a><br> by<a href="https://www.reddit.com/user/Caldankis/">u/Caldankis</a> from discussion<a href="https://www.reddit.com/r/godot/comments/adwd9h/should_i_give_up_months_of_work_with_nothing_to/"></a><br> in<a href="https://www.reddit.com/r/godot/">godot</a></blockquote><script async="" src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
 
-Before emarking on any large project, I recommend watching this:
-<iframe width="420" height="315" src="https://www.youtube.com/embed/Xh45MdVpR-M" frameborder="0" allowfullscreen></iframe>
-
+Before emarking on any large project, I recommend watching the following videos.
 It's very important to understand the scale of a project as well as your own skills, and time you can commit, to avoid burning yourself out.
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/v7500ewcCIo" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="420" height="315" src="https://www.youtube.com/embed/Edv-xI_29AE" frameborder="0" allowfullscreen></iframe>
+{% assign overview_ids="Xh45MdVpR-M,v7500ewcCIo,Edv-xI_29AE" | split: "," %}
+{% include /components/video-group.html id="overview" ids=overview_ids %}
 
 ## Starting
 To my recent surprise, when I tried to fork Godot, I discovered that I already had a fork. I must have forked it years ago to contribute, I'm pretty sure to add some image rotation improvements, but life got in the way.
