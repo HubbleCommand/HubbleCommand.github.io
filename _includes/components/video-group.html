@@ -16,7 +16,11 @@
 
 <div style="overflow:auto; white-space: nowrap;">
 {% for id in include.ids %}
-<img src="https://img.youtube.com/vi/{{id}}/2.jpg" onclick="console.log('{{id}}'); document.getElementById('{{domid}}').src = 'https://www.youtube.com/embed/{{id}}'"/>
+{% assign vidid = id %}
+{% if vidid contains '?' %}
+{% assign vidid = id | split:'?' | first %}
+{% endif %}
+<img src="https://img.youtube.com/vi/{{vidid}}/2.jpg" onclick="console.log('{{id}}'); document.getElementById('{{domid}}').src = 'https://www.youtube.com/embed/{{id}}'"/>
 {% endfor %}
 </div>
 </div>
