@@ -21,6 +21,21 @@ The full documentation can be read [here](https://docs.godotengine.org/en/stable
 
 
 ## Physics
+
+First, let me address the elephant in the room: Godot's physics is a bit fucky.
+It's a "in-house" built engine, [whose original developer has since left godot from before Godot 4](https://www.reddit.com/r/godot/comments/16p90a1/godot_4_default_physics_engine_is_a_complete_mess/).
+There has been talk for years to have official support for [Jolt](https://github.com/jrouwe/JoltPhysics) [(1)](https://github.com/godotengine/godot-proposals/discussions/5161) [(2)](https://github.com/godotengine/godot-proposals/issues/7308) [(3)](https://forum.godotengine.org/t/is-there-a-physics-engine-white-paper/82513).
+However, at the current time, there only exists the [Godot Jolt Plugin](https://github.com/godot-jolt/godot-jolt).
+
+Now, to be clear, most engines have massive drawbacks in their systems.
+Unreal Engine 4 has massive light bleed issues, Unity has had massive physics passthrough issues for decades, etc etc etc...
+As such, I draw attention to these issues more to present ways to work with the limitations given,
+not to complain or say how things should be improved, like many, many others due.
+
+The key to being a good developer, and more importantly for an engineer, is to work within the constraints you are given.
+
+If you cannot work within the constraints given to you, then mald, seeth, and cope.
+
 ### [Physics Layers and Masks](https://docs.godotengine.org/en/4.3/tutorials/physics/physics_introduction.html#collision-layers-and-masks)
 This is an incredibly powerful system.
 
@@ -114,5 +129,13 @@ The previous suggestion to use a Map of effects could be combined with a base sp
 Then, whenever an area is added or removed, the base speed would have all the multipliers applied.
 
 
-## Modifiers
+### Effects & DOT (damage over time)
+The simplest approach is to use timers, as seen [here](https://www.youtube.com/watch?v=ZliG9mX8f1w&ab_channel=DevDrache).
+
+When the timer emits, make whatever effect take place, and check if the effect should delete itself.
+
+For areas with DOT effects, you can get away with something better:
+When a player enters, you can potentially make the effect take place on enter.
+Then, the area itself holds the only timer, then applying the effect to all the entities within itself.
+This results in handling much fewer timers for a similar effect.
 
