@@ -403,8 +403,11 @@ class Preference<T>{
 ```
 
 While not *perfect*, I would prefer `decode` to be static, Dart (and many other languages for that matter) don't allow overriding static methods.
+Dart also has [other inheritence funniness](https://github.com/dart-lang/language/issues/1127).
 
-*However*, one could possibly have a factory class to make the codables. While this may not seem to solve the issue of how to get it statically, the solution is to pass this factory to the Preference class, like so:
+*However*, one could possibly have a factory class to make the codables.
+You can read more on Dart factories [here](https://www.joeltok.com/posts/2023-03-dart-abstract-class-factory-method/).
+While this may not seem to solve the issue of how to get it statically, the solution is to pass this factory to the Preference class, like so:
 
 ```dart
 abstract class CodableFactory {
@@ -470,3 +473,8 @@ Because the values are stored in different ways, and cannot be retrieved accross
 
 For more info on this and how to migrate, read [this issue](https://github.com/flutter/flutter/issues/150732).
 
+
+### Publishing to [pub.dev](pub.dev)
+Not much to say here, the [documentation](https://docs.flutter.dev/packages-and-plugins/developing-packages#publish) on the subject is pretty thorough.
+
+The only thing to keep in mind is to [write a good README](https://dart.dev/tools/pub/writing-package-pages#writing-a-good-readme-is-important).
