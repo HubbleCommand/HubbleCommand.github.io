@@ -10,6 +10,8 @@ last_modified_at  : 2024-07-30
 active: true
 ---
 
+![](/assets/godot/go_DOH.png)
+
 Godot, at this point, is a very popular [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) game engine.
 
 <blockquote class="reddit-embed-bq" data-embed-theme="dark" data-embed-height="220"><a href="https://www.reddit.com/r/godot/comments/1e9iyof/comment/leevgp2/">Comment</a><br> by<a href="https://www.reddit.com/user/Salt-Trash-269/">u/Salt-Trash-269</a> from discussion<a href="https://www.reddit.com/r/godot/comments/1e9iyof/whats_the_most_outrageous_bit_of_code_you_wrote/"></a><br> in<a href="https://www.reddit.com/r/godot/">godot</a></blockquote><script async="" src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
@@ -48,6 +50,13 @@ It's very important to understand the scale of a project as well as your own ski
 
 {% assign overview_ids="Xh45MdVpR-M,v7500ewcCIo,Edv-xI_29AE" | split: "," %}
 {% include /components/video-group.html id="overview" ids=overview_ids %}
+
+
+## Failing at GameDev
+
+{% assign failing_ids="L-HnmrERm_A,G8NegJVvtfI" | split: "," %}
+{% include /components/video-group.html id="failing" ids=failing_ids %}
+
 
 ## Starting
 To my recent surprise, when I tried to fork Godot, I discovered that I already had a fork. I must have forked it years ago to contribute, I'm pretty sure to add some image rotation improvements, but life got in the way.

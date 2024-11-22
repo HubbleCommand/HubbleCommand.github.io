@@ -6,6 +6,8 @@ categories  : ["GameDev", "Godot"]
 #start-date  : 
 ---
 
+![](/assets/godot/transient_parent.webp)
+
 ## General practices
 Return early in your functions to avoid needlessly nested code.
 
@@ -18,7 +20,7 @@ Long functions and code duplications should be extracted into other functions.
 Generally, use composition.
 This is even according to the [official documentation](https://docs.godotengine.org/en/3.2/tutorials/misc/state_design_pattern.html)!
 
-{% assign general_design_ids="RnjTYBhAcfA,GWYhtksrmhE,hxGOiiR9ZKg" | split: "," %}
+{% assign general_design_ids="RnjTYBhAcfA,GWYhtksrmhE,hxGOiiR9ZKg,HNzP1aLAffM,h1o5UzKfZcQ" | split: "," %}
 {% include /components/video-group.html id="general_design" ids=general_design_ids %}
 
 Godot specific
