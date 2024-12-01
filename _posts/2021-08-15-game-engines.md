@@ -9,6 +9,8 @@ last_modified_at: 2024-11-22
 
 > 2024-11-22: added frameworks & defold
 
+> 2024-12-01: added tutorial link for defold
+
 # TL;DR
 
 A few general notes:
@@ -49,6 +51,13 @@ It also has official support for many, [MANY services](https://defold.com/manual
 There are some cases where performance can dip:
 [(1)](https://forum.defold.com/t/unstable-fps-in-vsync-mode/77102/11)
 [(2)](https://forum.defold.com/t/execution-time-of-lua-script-in-defold-is-very-high-compared-to-execution-through-terminal/75872/4)
+
+
+## Learning
+The absolutely BEST place to start is [Unfolding Gamedev](https://www.youtube.com/@unfolding_gamedev)'s [Defold for beginners](https://www.youtube.com/playlist?list=PL4_orbQ0JeQtynHimL-r8DUqH5Jf_RHZ2) playlist.
+He also gives a good [comparaison between Defold and Godot](https://www.youtube.com/watch?v=3nfs6MNTNDo).
+
+The assets for the Space Shooter tutorial are from [Foozle's Void collection](https://itch.io/c/2713136/void).
 
 
 # #1 [Godot](https://godotengine.org/)
