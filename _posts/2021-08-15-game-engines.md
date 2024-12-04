@@ -62,6 +62,9 @@ The assets for the Space Shooter tutorial are from [Foozle's Void collection](ht
 
 # #1 [Godot](https://godotengine.org/)
 > 2024-11-22 : After working with Godot on and off for a few years, [even working in the core](https://github.com/HubbleCommand/godot), I'm done with it. There are just too many problems with fundamental systems like Input and Physics, and a total lack of stability. While I can work within the limitations and opinionated systems I'm presented with, I can't do it when they're constantly in flux.
+<video width="320" height="240" style="display: block; margin-left: auto; margin-right: auto;" controls>
+    <source src="/assets/godot/switch_engine.mp4" type="video/mp4">
+</video>
 
 I feel that any indie dev is going to say that Godot's good in this day and age.
 I was playing around with Godot in the early days of 3.1, and have seen it improve greatly with massive bug fixes, system improvements, and new features.
