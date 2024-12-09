@@ -27,6 +27,7 @@ The idea is simple: provide a barebones EA tool for cheap so that EA teams can g
 This would most likely be a web-based tool, especially due to collaborative editing.
 
 [Svelte](https://svelte.dev/) would be ideal, and I have enjoyed using it in the past.
+However, Svelte has changed since I last used it with the runes system, see more [here](https://www.youtube.com/watch?v=aYyZUDFZTrM).
 
 [D3](https://d3js.org/) could be an interesting place to look for graphing, see their [samples](https://d3-graph-gallery.com/).
 
