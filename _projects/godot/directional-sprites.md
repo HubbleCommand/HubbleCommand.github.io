@@ -71,6 +71,7 @@ Matrices are the basis of shaders, after all.
 - [Matrices for Tech Artists, a Cheat Sheet](https://shahriyarshahrabi.medium.com/matrices-for-tech-artists-a-cheat-sheet-a81ef64f3b7f)
 - [3D Maths Cheat Sheet](https://antongerdelan.net/teaching/maths_cheat_sheet.pdf)
 - [Matrices and Vectors in Game Development](https://dev.to/fkkarakurt/matrices-and-vectors-in-game-development-67h)
+- [Why Devs NEED TO know about Render Matrices!](https://www.youtube.com/watch?v=f05PwswO7qc)
 
 ### Funny issue with rads
 Radians are usually the go-to when dealing with angles.
