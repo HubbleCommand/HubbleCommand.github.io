@@ -151,7 +151,14 @@ Regex code to delete all instances of a specific tag, including their content
 - [ambientCG](https://ambientcg.com/) repository of free blender materials and 3D models
 - [Kenney](https://www.kenney.nl/assets) good guy that makes mostly free assets
 - [FreeStockTextures](https://freestocktextures.com/) as it's name implies, a collection of free stock textures (and images, photos, etc)
+- [GameDevMarket](https://www.gamedevmarket.net/asset/space-shooter-1-5280)
 - [OpenGameArg](https://opengameart.org) collection of open-source game art
+- [bensound](https://www.bensound.com/)
+- [AudioLibraryFreeMusic](https://www.youtube.com/@AudioLibraryFreeMusic)
+- [1001freefonts](https://www.1001freefonts.com/retro-fonts-5.php)
+- [FontSpace](https://www.fontspace.com/dieselpunk-font-f24099)
+- [lospec](https://lospec.com/palette-list) for palettes
+- [ColorHex](https://www.color-hex.com/color-palette/33626) for more palettes
 
 ### Asset creation
 - [LibreSprite](libresprite.github.io) pixel sprite maker
@@ -172,3 +179,12 @@ This is generally good for creating placeholders
 - [Strofe](https://www.strofe.com/get-started)[a](https://www.youtube.com/watch?v=r9ne-p0dADQ) music creation
 - [CyberVoice, now SteosVoice](https://cybervoice.io/en/)[a](https://www.youtube.com/watch?v=N0ulcW_yY3k) voice
 - [DeepAI](https://deepai.org/machine-learning-model/pop-art-generator) generator for many things (chat, images, video, music)
+
+## Stores
+- [distrelec](https://www.distrelec.ch/en/)
+- [3DJake](https://www.3djake.ch/fr-CH/imprimantes-3d-et-plus)
+- [Play-Zone](https://www.play-zone.ch/en/)
+- [Mouser](https://www.mouser.com/)
+- [Electrofun](https://www.electrofun.pt/en/arduino-sensors/accelerometers-and-gyros)
+- [Adafruit](https://www.adafruit.com/)
+- [Sparkfun](https://www.sparkfun.com/products/retired/15897)
