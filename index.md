@@ -7,6 +7,7 @@ title: Home
 # Hubble
 
 [![](https://img.shields.io/badge/Visit_repo-0)](https://github.com/HubbleCommand/HubbleCommand.github.io)
+[![LeetCode user HubbleCommand](https://img.shields.io/badge/dynamic/json?style=flat&labelColor=black&color=%23ffa116&label=Solved&query=solvedOverTotal&url=https%3A%2F%2Fleetcode-badge.vercel.app%2Fapi%2Fusers%2FHubbleCommand&logo=leetcode&logoColor=yellow)](https://leetcode.com/HubbleCommand/)
 
 IT dude. Does much IT!
 
