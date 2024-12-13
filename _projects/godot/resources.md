@@ -20,7 +20,7 @@ Long functions and code duplications should be extracted into other functions.
 Generally, use composition.
 This is even according to the [official documentation](https://docs.godotengine.org/en/3.2/tutorials/misc/state_design_pattern.html)!
 
-{% assign general_design_ids="RnjTYBhAcfA,GWYhtksrmhE,hxGOiiR9ZKg,HNzP1aLAffM,h1o5UzKfZcQ" | split: "," %}
+{% assign general_design_ids="RnjTYBhAcfA,GWYhtksrmhE,hxGOiiR9ZKg,HNzP1aLAffM,h1o5UzKfZcQ,mAfpfUYhpAs" | split: "," %}
 {% include /components/video-group.html id="general_design" ids=general_design_ids %}
 
 Godot specific
@@ -87,7 +87,7 @@ Ironically, the first tip in [this video](https://www.youtube.com/watch?v=5R0ajA
 
 ## Procedural Animation
 
-{% assign procanim_ids="qlfh_rv6khY,G_seJ2Yg1GA" | split: "," %}
+{% assign procanim_ids="KPoeNZZ6H4s,qlfh_rv6khY,G_seJ2Yg1GA" | split: "," %}
 {% include /components/video-group.html id="procanim" ids=procanim_ids %}
 
 
@@ -107,7 +107,6 @@ However, it does appear a bit more powerful in Godot, as you can see [here](http
 Before working with shaders, you need to know more about matrices, or how the GPU actually draws to your screen.
 
 [The Transformation Matrix for 2D Games](https://www.alanzucconi.com/2016/02/10/tranfsormation-matrix/)
-
 
 {% assign shader_intro_ids="wiYTxjJjfxs,MQdm0Z_gNcw,o-xwmTODTUI,EqNcqBdrNyI,7qUuzRY5YwI,L97Y12TV7Ro,nyFzPaWAzeQ,BZp8DwPdj4s,1pJyYtBAHks,fEQUPSV24fI,jH0MD8obOCQ" | split: "," %}
 {% include /components/video-group.html id="shader_intro" ids=shader_intro_ids %}
@@ -130,6 +129,8 @@ Sample shader assets:
 [Variable rate shading](https://github.com/godotengine/godot-demo-projects/tree/master/3d/variable_rate_shading) (NVIDIA feature that changes the rate shading is calculated in different regions of the scene to increase performance)
 
 Shader stuff for [refraction](https://forum.godotengine.org/t/getting-both-the-frontfacing-and-backfacing-normals-on-the-front-faces/62382)
+
+[Motion Extraction](https://www.youtube.com/watch?v=NSS6yAMZF78&ab_channel=Posy)
 
 
 ## Light2D
