@@ -18,7 +18,10 @@ It's impossible to make the perfect software. From simple bugs to incorrect stra
 
 ### Do it once, think ahead
 Premature optimization is the root of all evil.
-So is a lack of foresight [[1]](https://pythonspeed.com/articles/premature-optimization/) [[2]](https://www.youtube.com/watch?v=GA4ONupSl8Y).
+So is a lack of foresight
+[[1]](https://pythonspeed.com/articles/premature-optimization/)
+[[2]](https://www.youtube.com/watch?v=GA4ONupSl8Y)
+[[3]](https://www.youtube.com/watch?v=MR4i3Ho9zZY).
 Like with everything in life, you have to find a balance. You can't just jump in and write spaghetti, and you can't spend months talking about design patterns, and [don't over-engineer](https://www.youtube.com/watch?v=-AQfQFcXac8).
 
 ### Do it once, but investigate
