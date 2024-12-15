@@ -14,5 +14,5 @@ My one contribution was looking at steering systems:
 
 [Tank Steering Systems](https://en.wikipedia.org/wiki/Tank_steering_systems)
 
-{% assign steering_ids="UuDNc-_4v94,UNdKbaA0EPQ,_z3n6VOk-Ls,moOmzgpxfIw,x0_czrP1Tqk,7WWsfgjWK1I" | split: "," %}
+{% assign steering_ids="UuDNc-_4v94,UNdKbaA0EPQ,_z3n6VOk-Ls,moOmzgpxfIw,x0_czrP1Tqk,7WWsfgjWK1I,WvtX4En-h0Q" | split: "," %}
 {% include /components/video-group.html id="steering" ids=steering_ids %}
