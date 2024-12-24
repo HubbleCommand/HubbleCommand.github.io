@@ -28,6 +28,7 @@ This would most likely be a web-based tool, especially due to collaborative edit
 
 [Svelte](https://svelte.dev/) would be ideal, and I have enjoyed using it in the past.
 However, Svelte has changed since I last used it with the runes system, see more [here](https://www.youtube.com/watch?v=aYyZUDFZTrM).
+Here's a [good video](https://www.youtube.com/watch?v=VMDydLUCLtE&ab_channel=Theo-t3%E2%80%A4gg) of how these frameworks work under the hood.
 
 [D3](https://d3js.org/) could be an interesting place to look for graphing, see their [samples](https://d3-graph-gallery.com/).
 
