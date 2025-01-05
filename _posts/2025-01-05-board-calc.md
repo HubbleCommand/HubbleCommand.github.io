@@ -110,8 +110,8 @@ ms
 
 		let container = document.getElementById("jeton-container")
 		container.textContent = ""
-		for (var r = 0; r < size; r++) {
-			for (var c = 0; c < size; c++) {
+		for (let r = 0; r < size; r++) {
+			for (let c = 0; c < size; c++) {
 				if (a2[r] != 0 && b2[c] != 0) {
 					jetons[r][c] = 1
 					var jeton = document.createElement("div")
@@ -147,8 +147,8 @@ ms
 		let container = document.getElementById("jeton-container")
 		var incomplete = false
 
-		for (var r = size - 2; r >= 0; r--) {
-			for (var c = size - 2; c >= 0; c--) {
+		for (let r = size - 2; r >= 0; r--) {
+			for (let c = size - 2; c >= 0; c--) {
 				if (jetons[r][c] != 0) {
 					if (r !== size - 2) {
 						console.log(`${r}${c} is not zero`)
@@ -212,11 +212,11 @@ ms
 	function drawBoard() {
 		let board = document.getElementById("board")
 
-		for (var i = 1; i <= size; i++) {
+		for (let i = 1; i <= size; i++) {
 			var row = document.createElement("div")
 			row.className = "cellRow"
 
-			for (var j = 0; j <= size; j++) {
+			for (let j = 0; j <= size; j++) {
 				var cell = document.createElement("div")
 				cell.className = "cell"
 
@@ -249,7 +249,7 @@ ms
 
 		let numRow = document.createElement("div")
 		numRow.className = "cellRow"
-		for (var j = 1; j <= size; j++) {
+		for (let j = 1; j <= size; j++) {
 			var cell = document.createElement("div")
 			cell.className = "cell"
 			cell.innerHTML = Math.pow(2, size - j)
