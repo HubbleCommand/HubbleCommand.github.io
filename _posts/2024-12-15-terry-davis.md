@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Terry Davis"
+title: "Terry Davis & Jonathan Blow"
 date: 2024-12-15
 ---
 
@@ -19,3 +19,8 @@ Here's a few of my favorites:
 
 {% assign td_ids="4K8IEzXnMYk,k0qmkQGqpM8,gBE6glZNJuU,wKm8rVaZfqg,IG0CHGGb1-I,_QccgKS4b58" | split: "," %}
 {% include /components/video-group.html id="td" ids=td_ids %}
+
+Jonathan Blow is someone that's sort of in the same vein, just not schizophrenic.
+
+{% assign jb_ids="CgdKYBqe6QA,nL8GWU9M8LY,wCllU4YkxBk" | split: "," %}
+{% include /components/video-group.html id="jb" ids=jb_ids %}
