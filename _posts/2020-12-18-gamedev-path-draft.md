@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Simple Game Dev Guide"
-categories: ["GameDev"]
 date: 2020-12-18
 ---
 
