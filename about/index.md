@@ -38,6 +38,8 @@ If you notice you're writing duplicate code, it usually means you haven't though
 
 <img style="display: block; margin-left: auto; margin-right: auto;" src="/assets/images/tdd.jpg">
 
+<iframe title="Simple testing can prevent most critical failures" style="display: block; margin-left: auto; margin-right: auto;" width="560" height="315" src="https://www.youtube.com/embed/6xrGo1IIB3w?si=wujwOg4mjg6qrQhQ&amp;start=883" frameborder="0" allowfullscreen></iframe>
+
 Test driven design is truly one of the best software development practices, and it's one that I frequently employ.
 The major benefit is that it allows you to immediately, from requirements, define how the software is supposed to behave.
 It's the perfect method for sanity checking as well.
