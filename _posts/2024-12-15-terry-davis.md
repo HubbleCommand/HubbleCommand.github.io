@@ -22,5 +22,5 @@ Here's a few of my favorites:
 
 Jonathan Blow is someone that's sort of in the same vein, just not schizophrenic.
 
-{% assign jb_ids="CgdKYBqe6QA,nL8GWU9M8LY,wCllU4YkxBk,04ksL1hf_p8,92kcm3b-Q_s,nDt_sfn0exQ" | split: "," %}
+{% assign jb_ids="x-eSfBKLWcI,CgdKYBqe6QA,nL8GWU9M8LY,wCllU4YkxBk,04ksL1hf_p8,92kcm3b-Q_s,nDt_sfn0exQ" | split: "," %}
 {% include /components/video-group.html id="jb" ids=jb_ids %}
