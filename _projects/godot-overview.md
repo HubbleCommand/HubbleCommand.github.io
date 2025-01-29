@@ -7,7 +7,6 @@ programming-languages: ["C++", "GDScript"]
 icons       : ["godot", "cplusplus"]
 start-date  : 2024-01-13
 last_modified_at  : 2024-07-30
-active: true
 ---
 
 ![](/assets/godot/go_DOH.png)
