@@ -2,10 +2,12 @@
 layout: post
 title: "Game Engines"
 date: 2021-08-15
-last_modified_at: 2024-11-22
+last_modified_at: 2025-01-29
 ---
 
-> I originally preferred Flax to Godot, and honestly I think they're both great engines. However, Godot's UI and 2D systems are much better, and I think the Godot has a brighter future. While the Arizona Framework for Flax is a good step, and I prefer the C++ / C# interoperability, it's still a long way from the ease of use of Godot.
+> I originally preferred Flax to Godot, and honestly I think they're both great engines.
+	However, Godot's UI and 2D systems are much better, and I think Godot has a brighter future.
+	While the Arizona Framework for Flax is a good step, and I prefer the C++ / C# interoperability, it's still a long way from the ease of use of Godot.
 
 > 2024-11-22: added frameworks & defold
 
@@ -33,7 +35,7 @@ Immense amount of time is spent on designing the engine, not just developing it.
 Which, in this case, is much better.
 
 For me, what really drew me in were two things:
-- Design first: the engine has a long history of spending months working on architecting and designing systems, NOT on just
+- Design first: the engine has a long history of spending months working on architecting and designing systems, NOT on just spitting out code
 - [No breaking changes](https://defold.com/why/): as a lot of time is spent *architecting* the systems, they do things right the first time. This was a massive problem migrating from Godot 3 to 4, and Godot 4 still has many systems that get redone constantly, such as the TileMap
 
 It also has official support for many, [MANY services](https://defold.com/manuals/online-services/):
@@ -61,8 +63,12 @@ The assets for the Space Shooter tutorial are from [Foozle's Void collection](ht
 
 
 # #1 [Godot](https://godotengine.org/)
-> 2024-11-22 : After working with Godot on and off for a few years, [even working in the core](https://github.com/HubbleCommand/godot), I'm done with it. There are just too many problems with fundamental systems like Input and Physics, and a total lack of stability. While I can work within the limitations and opinionated systems I'm presented with, I can't do it when they're constantly in flux.
-<video width="320" height="240" style="display: block; margin-left: auto; margin-right: auto;" controls>
+> 2024-11-22 : After working with Godot on and off for a few years, [even working in the core](https://github.com/HubbleCommand/godot), I'm done with it.
+	There are just too many problems with fundamental systems like Input, Physics, changes to inheritence behavior in their scripting language GDScript, and a total lack of stability in general.
+	While I can work within the limitations and opinionated systems I'm presented with, I can't do it when they're constantly in flux.
+	I don't generally agree with changing frameworks / tools like this, but I'm spending more time fixing issues & migrating than I am making games.
+
+<video  style="display: block; margin-left: auto; margin-right: auto;" controls="controls">
     <source src="/assets/godot/switch_engine.mp4" type="video/mp4">
 </video>
 
@@ -72,7 +78,7 @@ I was playing around with Godot in the early days of 3.1, and have seen it impro
 The unique approach of using Nodes and Trees instead of an [ECS](https://en.wikipedia.org/wiki/Entity_component_system) results in a unique approach to game development. Well thought out systems like the UI and multiplayer make it quick to block out games for quick testing, and later fill it in.
 
 My only real gripe is that they made their own language for scripting: GDScript. While I can follow their reasoning, the issue is that is has the same issues as [Dart](https://dart.dev/); it's a language that exists for a single framework, and needs consistent reworks to make it usable.
-GDScript has similar issues, albeit not as bad as Dart, as seen during the transition between Godot 3 and 4.
+GDScript has similar issues, ~~albeit not as bad as Dart~~, as seen during the transition between Godot 3 and 4.
 
 Another major gripe of mine in the coding is the amount of "magic strings", mostly the [frequency that you have to use them](https://www.reddit.com/r/godot/comments/16ls113/unity_godot_why_does_godot_work_with_magic/).
 
