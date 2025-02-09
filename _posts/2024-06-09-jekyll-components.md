@@ -53,6 +53,7 @@ See the file [here]([`_includes/components/devicon`](https://github.com/HubbleCo
 
 
 ## Video group component
+
 There is a problem that quite a few of the pages in this site have: too many embeded videos.
 Past 5, there is noticible lag for the full page to load.
 In many cases, there is no need to have so many embeds, as they are all covering the same topic.
