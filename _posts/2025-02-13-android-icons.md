@@ -4,6 +4,9 @@ title: "Android Icons"
 date: 2025-02-13
 ---
 
+> Note that many of the XMLs will have a default tint, which will override and `fillColor`
+> just remove the `android:tint` which will be at the top level `<vector>` (first line)
+
 In all of my Android jobs, I've always been given the assets to use by our UX teams.
 The process is easy: download whatever assets I'm supposed to use, import them, and use them.
 
