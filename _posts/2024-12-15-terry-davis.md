@@ -17,7 +17,7 @@ Truly the duality of most talented software engineers.
 
 Here's a few of my favorites:
 
-{% assign td_ids="4K8IEzXnMYk,k0qmkQGqpM8,gBE6glZNJuU,wKm8rVaZfqg,IG0CHGGb1-I,_QccgKS4b58" | split: "," %}
+{% assign td_ids="4K8IEzXnMYk,k0qmkQGqpM8,gBE6glZNJuU,wKm8rVaZfqg,IG0CHGGb1-I,_QccgKS4b58,qtaCqU5yY9Y" | split: "," %}
 {% include /components/video-group.html id="td" ids=td_ids %}
 
 Jonathan Blow is someone that's sort of in the same vein, just not schizophrenic.
