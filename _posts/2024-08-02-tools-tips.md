@@ -102,6 +102,9 @@ Regex code to delete all instances of a specific tag, including their content
 
 ```\n?<description>[\S\s\n]*?<\/description>\n?```
 
+## Android Studio
+`Ctrl + Alt + L` auto formats code
+
 # Tools
 ## Apps
 - [Audacity](https://www.audacityteam.org/)
@@ -145,6 +148,8 @@ Regex code to delete all instances of a specific tag, including their content
 - [Terragen](https://planetside.co.uk/free-downloads/terragen-4-free-download/)  terrain generation
 - [World Machine](https://www.world-machine.com/) terrain generation
 - [World Creator](https://www.world-creator.com/en/index.phtml) terrain generation
+- [Shape Shifter](https://shapeshifter.design/) for vector animation
+- [Rive](https://rive.app/) for vfector graphics & animation, integrates with Defold
 
 ### Assets
 - [The Base Mesh](https://www.thebasemesh.com/) repository of 3D base assets
@@ -170,7 +175,7 @@ Regex code to delete all instances of a specific tag, including their content
 - [G'MIC](https://gmic.eu/)[a](https://www.youtube.com/watch?v=1agzsBn7ZE0) assorted image processing tools
 - [OpenToonz](https://opentoonz.github.io/e/)[a](https://www.youtube.com/watch?v=x_kbuQNxzik)[repo](https://github.com/opentoonz/opentoonz) 2D animation software
 - [Cascadeur](https://cascadeur.com/)[a](https://www.youtube.com/watch?v=XFmCFuNAM4s) 3D animation tool
-
+- [pixeldudesmaker](https://0x72.itch.io/pixeldudesmaker)
 
 ### AI assisted creation
 This is generally good for creating placeholders
@@ -188,3 +193,4 @@ This is generally good for creating placeholders
 - [Electrofun](https://www.electrofun.pt/en/arduino-sensors/accelerometers-and-gyros)
 - [Adafruit](https://www.adafruit.com/)
 - [Sparkfun](https://www.sparkfun.com/products/retired/15897)
+- [ThingsMobile](https://www.thingsmobile.com/business)
