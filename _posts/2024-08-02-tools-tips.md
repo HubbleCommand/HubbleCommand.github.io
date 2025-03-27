@@ -21,7 +21,15 @@ Be on the look out for [JitCI](https://jitci.com/) !!! This is a CI platform mad
 [Neo4j](https://neo4j.com/) is very good
 
 ## Windows
-[Scoop](https://scoop.sh/) is an incredibly useful command-line installer for Windows. Adds great tools like [7Zip](https://7-zip.org/)
+
+[Scoop](https://scoop.sh/) is an incredibly useful command-line installer for Windows.
+Adds great tools like [7Zip](https://7-zip.org/).
+
+- Moving Windows: `Alt` + `Space` followed by `M`.
+  This will move your mouse so that you can move a window with the top bar.
+  Then, just move your mouse until the application comes into view.
+  Useful if you have multiple monitors shared between devices, and need to move an application to a different screen while it is owned by another device.
+
 
 ## XML
 You can import an XML file into another XML file with the [entity tag](https://www.w3.org/TR/REC-xml/#sec-external-ent). Import the file with `<!ENTITY otherFile SYSTEM "otherFile.xml">`, then reference it with `&otherFile;`:
