@@ -8,14 +8,19 @@ This is going to be an ongoing list of useful tools I've found & use.
 
 # Upcoming
 
-Be on the look out for [JitCI](https://jitci.com/) !!! This is a CI platform made by [JitPack](https://jitpack.io/tests), which will build your releases. Seems very promising!
+Be on the look out for [JitCI](https://jitci.com/) !!!
+This is a CI platform made by [JitPack](https://jitpack.io/tests), which will build your releases.
+Seems very promising!
+> As of 2025-03-27, JitCI is still in beta
 
 # Tips
+
 [MarkDown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 [SCP for file transfer](https://kb.iu.edu/d/agye)
 
-[Article on Jekyll components](https://sayzlim.net/jekyll-include-component/) I found after looking at the [documentation](https://jekyllrb.com/docs/includes/)
+[Article on Jekyll components](https://sayzlim.net/jekyll-include-component/) I found after looking at the [documentation](https://jekyllrb.com/docs/includes/).
+Also look at the [Jekyll Cheatsheet](https://cloudcannon.com/cheat-sheets/jekyll/).
 
 ## Databases
 [Neo4j](https://neo4j.com/) is very good
