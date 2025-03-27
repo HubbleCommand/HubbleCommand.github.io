@@ -181,6 +181,7 @@ Regex code to delete all instances of a specific tag, including their content
 ### Asset creation
 - [LibreSprite](libresprite.github.io) pixel sprite maker
 - [DPaint.js](https://www.stef.be/dpaint/)[a](https://www.youtube.com/watch?v=9CvxRgU8p1c) pixel paint tool
+- [Pixelorama](https://orama-interactive.itch.io/pixelorama) pixel paint tool
 - [MusicMaker](https://www.magix.com/int/music/music-maker/)
 - [LMMS](https://github.com/LMMS/lmms) for music production
 - [ChiptTone](https://sfbgames.itch.io/chiptone)[a](https://www.youtube.com/watch?v=v51fDrZXh_I) for creating sound effects
