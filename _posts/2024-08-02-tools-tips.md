@@ -190,6 +190,7 @@ Regex code to delete all instances of a specific tag, including their content
 - [OpenToonz](https://opentoonz.github.io/e/)[a](https://www.youtube.com/watch?v=x_kbuQNxzik)[repo](https://github.com/opentoonz/opentoonz) 2D animation software
 - [Cascadeur](https://cascadeur.com/)[a](https://www.youtube.com/watch?v=XFmCFuNAM4s) 3D animation tool
 - [pixeldudesmaker](https://0x72.itch.io/pixeldudesmaker)
+- [blockbench](https://www.blockbench.net/)
 
 ### AI assisted creation
 This is generally good for creating placeholders
