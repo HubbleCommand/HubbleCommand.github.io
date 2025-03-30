@@ -7,6 +7,11 @@ layout: default
   , last modified {{ page.last_modified_at | date_to_string }}
 {% endif %}
 </p>
+
+{% if page.categories and page.categories != empty %}
+  <small>tags: <em>{{ page.categories | join: "</em> - <em>" | downcase }}</em></small>
+{% endif %}
+
 <div class="post">
   {{ content }}
 </div>
