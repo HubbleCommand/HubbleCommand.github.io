@@ -13,3 +13,6 @@ collections:
     output: true
     godot:
       output: true
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/

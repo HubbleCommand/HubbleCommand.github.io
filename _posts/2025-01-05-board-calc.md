@@ -2,6 +2,7 @@
 layout: post
 title: "Checkerboard Calculator"
 date: 2025-01-05
+categories  : ["Math"]
 ---
 
 This is sort of a continuation from my post about the [Recamán Sequence]({{ site.url }}{{ site.baseurl }}{% link _posts/2024-12-26-recaman-sequence.md %}).

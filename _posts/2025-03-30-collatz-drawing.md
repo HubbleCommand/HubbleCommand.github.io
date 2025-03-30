@@ -2,6 +2,7 @@
 layout: post
 title: "Collatz Conjecture Drawing"
 date: 2025-03-30
+categories  : ["Math"]
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/p5@1.11.2/lib/p5.js"></script>
