@@ -15,4 +15,4 @@ collections:
       output: true
   posts:
     output: true
-    permalink: /:year/:month/:day/:title/
+    permalink: /:year/:month/:day/:title.html
