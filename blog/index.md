@@ -13,7 +13,11 @@ title: Blog
 
 <ul>
     {% for post in year.items %}
-        <li><span>{{ post.date | date: "%b %d" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+        <li><span>{{ post.date | date: "%b %d" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        {% if post.categories and post.categories != empty %}
+            <span style="float:right;">{{post.categories | array_to_sentence_string}}</span>
+        {% endif %}
+        </li>
     {% endfor %}
 </ul>
 
