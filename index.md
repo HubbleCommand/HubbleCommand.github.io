@@ -60,9 +60,11 @@ Prepare for ramblings
 
 
 ## My repos that have been starred
+
 <script src="/assets/js/repo_stars.js"></script>
 
 <div style="display: grid; grid-template-columns: auto auto;" id="repo-stars"></div>
 
 ## Repos I've starred
+
 <div style="display: grid; grid-template-columns: auto auto auto;" id="starred-repos"></div>
