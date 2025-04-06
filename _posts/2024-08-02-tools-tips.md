@@ -208,6 +208,7 @@ Regex code to delete all instances of a specific tag, including their content
 - [AudioLibraryFreeMusic](https://www.youtube.com/@AudioLibraryFreeMusic)
 - [1001freefonts](https://www.1001freefonts.com/retro-fonts-5.php)
 - [FontSpace](https://www.fontspace.com/dieselpunk-font-f24099)
+- [FontForge](https://fontforge.org/) for editing fonts
 - [lospec](https://lospec.com/palette-list) for palettes
 - [ColorHex](https://www.color-hex.com/color-palette/33626) for more palettes
 
@@ -225,6 +226,7 @@ Regex code to delete all instances of a specific tag, including their content
 - [Cascadeur](https://cascadeur.com/)[a](https://www.youtube.com/watch?v=XFmCFuNAM4s) 3D animation tool
 - [pixeldudesmaker](https://0x72.itch.io/pixeldudesmaker)
 - [blockbench](https://www.blockbench.net/)
+- [smack studio](https://smackstudio.com/characters/) game with very good pixel art & animation tools
 
 ### AI assisted creation
 
