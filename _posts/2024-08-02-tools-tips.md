@@ -140,6 +140,8 @@ Regex code to delete all instances of a specific tag, including their content
 
 ```\n?<description>[\S\s\n]*?<\/description>\n?```
 
+You can disable the editor scrolling past the end of a file with the setting `editor.scrollBeyondLastLine : false`
+
 ## Android Studio
 
 `Ctrl + Alt + L` auto formats code
