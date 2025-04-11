@@ -106,8 +106,10 @@ To update all fields in a document (i.e. citation fields), press `Ctrl + A`, `F9
 
 ## Edge
 
-When selecting groups of tabs in Firefox, closing one will close all of the selected tabs.
-Edge doesn't do this, but hitting the `Ctrl + W` shortcut will close selected tabs in the current window.
+- When selecting groups of tabs in Firefox, closing one will close all of the selected tabs.
+  Edge doesn't do this, but hitting the `Ctrl + W` shortcut will close selected tabs in the current window.
+
+- [Console tool utility functions and selectors](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/console/utilities)
 
 See [here]({{ site.url }}{{ site.baseurl }}{% link _posts/2024-06-13-using-edge.md %}) for more.
 
