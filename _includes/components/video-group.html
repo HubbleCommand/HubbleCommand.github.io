@@ -1,26 +1,74 @@
 {% assign domid = "vid-group" %}
 {% if include.id %}
-{% assign domid = include.id %}
+	{% assign domid = include.id %}
 {% endif %}
 
-<div>
-<iframe 
-	style="display: block;
-	margin-left: auto;
-	margin-right: auto;
-	background-color:black"
-	id="{{domid}}"
-	width="420"
-	height="315"
-	frameborder="0" allowfullscreen></iframe>
-
-<div style="overflow:auto; white-space: nowrap;">
-{% for id in include.ids %}
-{% assign vidid = id %}
-{% if vidid contains '?' %}
-{% assign vidid = id | split:'?' | first %}
-{% endif %}
-<img src="https://img.youtube.com/vi/{{vidid}}/2.jpg" onclick="console.log('{{id}}'); document.getElementById('{{domid}}').src = 'https://www.youtube.com/embed/{{id}}'"/>
-{% endfor %}
-</div>
+<style>
+	:root { --height : 315px; }
+	.vg { display: flex; background-color:black; }
+	.vg iframe {
+		flex: 1;
+		width: 420px;
+		height: var(--height);
+	}
+	.vg-playlist-container {
+		flex: 1;
+		height: var(--height);
+		overflow-y: scroll;
+		white-space: nowrap;
+		overscroll-behavior: contain; ;
+	}
+	.vg-item-details {
+		flex: 1; max-width: 60%;
+	}
+	.vg-item {
+		flex: 1;
+		display: flex;
+		min-width: 0;
+		border-bottom: 1px dashed #b5e853;
+		padding-left: 1em;
+	}
+	.vg-item, img {
+		flex: 0 1 auto;
+		height: 100px;
+	}
+	.vg-item, p {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-left: 1em;
+	}
+</style>
+<div class="vg">
+	<iframe id="{{domid}}"
+			frameborder="0" 
+			allowfullscreen></iframe>
+	<div class="vg-playlist-container">
+		{% for id in include.ids %}
+			{% assign vidid = id %}
+			{% if vidid contains '?' %}
+				{% assign vidid = id | split:'?' | first %}
+			{% endif %}
+			<div class="vg-item" onclick="console.log('{{id}}'); document.getElementById('{{domid}}').src = 'https://www.youtube.com/embed/{{id}}'">
+				<img id="thumb-{{vidid}}" src="https://img.youtube.com/vi/{{vidid}}/2.jpg"/>
+				<div class="vg-item-details">
+					<p id="title-{{vidid}}"></p>
+					<p id="author-{{vidid}}"></p>
+				</div>
+				<script>
+					fetch("https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={{vidid}}&format=json")
+						.then(res => res.json())
+						.then(data => {
+							document.getElementById('title-{{vidid}}').innerText = data.title;
+							document.getElementById('author-{{vidid}}').innerText = data.author_name;
+							document.getElementById('thumb-{{vidid}}').src = data.thumbnail_url;
+						})
+						.catch(err => {
+							console.error('Error fetching title:', err);
+							document.getElementById('title-{{vidid}}').innerText = 'Failed to load data for {{vidid}}';
+						});
+				</script>
+			</div>
+		{% endfor %}
+	</div>
 </div>

@@ -2,10 +2,14 @@
 layout: post
 title: "Jekyll Components"
 date: 2024-06-09
-last_modified_at: 2024-11-18
+last_modified_at: 2025-04-11
 ---
 
 > 2024-11-18: added section on Video Group component
+
+> 2025-04-11: update to Video Group component
+
+> 2025-04-11: a downside to my approach is that CSS files cannot easily be put in the `/components` directory, they have to be put in `assets`
 
 In my recent post about [Badges and Icons]({% post_url 2024-06-07-badges-icons %}), I ended up needing to add a lot of icons from [Devicon](https://devicon.dev/), but I was tired of having to copy-paste so many `<i>` elements. It made the source of my pages more difficult to write in, and bloated them with a lot of duplicate `<i>` with only a few characters of difference for changing parts of the icon ID.
 
@@ -65,3 +69,7 @@ A list of the thumbnails is created with a single `<iframe>`.
 Whenever one of the thumbnails is clicked, it changes the `src` of the `<iframe>`.
 
 This has improved the loading of quite a few pages significantly.
+
+> 2025-04-11: Some things I didn't like about the component:
+	it wasn't using the primary thumbnail, there was no title, and the layout wasn't great.
+	So, I completely reworked it to include these elements.
