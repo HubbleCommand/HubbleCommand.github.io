@@ -3,6 +3,7 @@ layout: default
 title: About
 ---
 
+https://zarar.dev/good-software-development-habits/
 
 ## My philosophies & approach to Software Engineering
 
@@ -15,6 +16,11 @@ Focus more on learning architectural approaches than the specifics of a language
 
 ## Not perfect, but perfectly workable
 It's impossible to make the perfect software. From simple bugs to incorrect strategy, it is effectively, nearly thermodinamically impossible for every single step of the Software Development cycle to be accident-free. The same thing can be said about pretty much anything: perfection is an unattainable absolute.
+
+<figure>
+<img style="margin: auto; display: block;" src="/assets/images/missile_memleak.jpg" height="125"/>
+<figcaption style="text-align: center;"><a href="https://devblogs.microsoft.com/oldnewthing/20180228-00/?p=98125">source: Kent Mitchell</a></figcaption>
+</figure>
 
 ### Do it once, think ahead
 Premature optimization is the root of all evil.
