@@ -100,6 +100,8 @@ You can cheat by looking in the console.
 
 Could be funny to do the same for weapons [*](https://github.com/GaijinEntertainment/fmod_studio_warthunder_for_modders/tree/refs/heads/master/Assets/weapons).
 
+There is a file in `steamapps/common/War Thunder/sound/tanks_engines.assets.bank`.
+
 I didn't want to spend more than an hour so this is what you get...
 
 Form is only to generate the data file, avoids rate limiting & making keys public.
