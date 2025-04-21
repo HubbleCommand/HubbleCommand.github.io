@@ -150,6 +150,8 @@ You can disable the editor scrolling past the end of a file with the setting `ed
 
 # Tools
 
+- [musikerkennung](https://musikerkennung.com/en/) music recognition tool that I've had the best luck with
+
 ## Apps
 
 - [Audacity](https://www.audacityteam.org/)
@@ -215,6 +217,7 @@ You can disable the editor scrolling past the end of a file with the setting `ed
 - [FontForge](https://fontforge.org/) for editing fonts
 - [lospec](https://lospec.com/palette-list) for palettes
 - [ColorHex](https://www.color-hex.com/color-palette/33626) for more palettes
+- [Sonniss](https://sonniss.com/gameaudiogdc/) for audio
 
 ### Asset creation
 
