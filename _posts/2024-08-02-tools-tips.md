@@ -174,6 +174,7 @@ You can disable the editor scrolling past the end of a file with the setting `ed
 - [Anonymousemail](https://anonymousemail.me/) just found, never used, can't think of a use, more interested in how it works
 - [PopTox](https://www.poptox.com/) free online phone service, interested in how this works
 - [API speed testing](https://tools.keycdn.com/performance)
+- [Mock API](https://jsoning.com/api/)
 - [MarkDown table generator](https://www.tablesgenerator.com/markdown_tables#)
 - [AddText](https://addtext.com/) add text to an image
 - [jsDelivr](https://www.jsdelivr.com/?docs=gh) very good & simple CDN for JS libs.
