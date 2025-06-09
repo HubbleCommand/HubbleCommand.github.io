@@ -32,6 +32,7 @@ Here's a [good video](https://www.youtube.com/watch?v=VMDydLUCLtE&ab_channel=The
 
 [D3](https://d3js.org/) could be an interesting place to look for graphing, see their [samples](https://d3-graph-gallery.com/).
 [shadcn/ui](https://ui.shadcn.com/) is another good source of componenets.
+[AG Charts](ag-grid).
 
 Regarding collaboration tech, the most interesting is [yjs](https://github.com/yjs/yjs), watch more [here](https://www.youtube.com/watch?v=NKGTsxvQK9g).
 
