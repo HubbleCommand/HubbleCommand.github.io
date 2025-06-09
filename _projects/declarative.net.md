@@ -17,6 +17,7 @@ icons: ["csharp", "dotnetcore"]
 
 
 ## Origin
+
 After playing around with MAUI while making <a href="{{ site.url }}{{ site.baseurl }}{% link _projects/prepa-ch.md %}">PrepaCH</a>, a though occured to me.
 MAUI had plenty of issues (some of which [I have reported](https://github.com/dotnet/maui/issues/18420)), so I wondered; what would a declarative app framework look like in C#?
 
@@ -28,6 +29,7 @@ Of course, one cannot forget to mention [Design Patterns: Elements of Reusable O
 
 
 ## Why not proceed
+
 First off, [Nobody Cares About Technical GitHub Projects](https://www.youtube.com/watch?v=uA-yk1O3uq4&ab_channel=ThePrimeTime).
 While this would be trying to fix some issues with MAUI, it wouldn't really do much.
 
@@ -38,9 +40,13 @@ While not declarative in the slightest, I feel like it's not too far off and you
 
 
 ## Wouldn't start from scratch
+
 Of course, I thought of just starting from scratch.
 I looked into having the UI made in [Skia](https://skia.org/) / [SkiaSharp](https://github.com/mono/SkiaSharp).
 However, the mono project was [recently 'killed'](https://gamefromscratch.com/mono-is-dead-love-live-wine/), so who knows what the future of SkiaSharp would be.
+There is some documentation for Skai specifically in MAUI
+[*](https://www.youtube.com/watch?v=ZwLNTBGh-Nw&ab_channel=InsidedotNET)
+[*](https://learn.microsoft.com/en-us/dotnet/maui/migration/skiasharp?view=net-maui-9.0).
 
 That being said, Skia only handles rendering, all other systems like input, canvas gestures, and all system-level calls like battery status, etc, would have to be redone from scratch.
 Going down that path would require a lot of groundwork before even getting to the declarative UI system.
@@ -50,13 +56,16 @@ After all, the main point of Declarative.NET would only be to have declarative U
 
 
 ## Implementation plan in MAUI
+
 ### How existing frameworks work
+
 First off, it's important to understand the inner workings of existing declarative frameworks:
 - [How Compose works](https://developer.android.com/develop/ui/compose/phases)
 - [How Flutter works](https://docs.flutter.dev/resources/architectural-overview)
 - [How SwiftUI works](https://www.vadimbulavin.com/swiftui-view-lifecycle/) (my major gripe here is that Apple doesn't have anything itself to describe how SwiftUI works...)
 
 ### Rendering
+
 An MVP would have the following:
 - basic layout system with a view tree
 - a few basic views through which all other widgets could be implemented: text, shape, image
@@ -80,6 +89,7 @@ After all, Flutter started with Skia, so it would be a good starting point (they
 The major downside here, compared to GraphicsView, is that the Skia views cannot handle inputs (afaik).
 
 ### Code-wise
+
 While that all nice and dandy, there's some important things to consider with how this would be concretely implemented.
 C#'s Attribute system is a good place to start:
 - [C# Attributes](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/reflection-and-attributes/)
@@ -92,4 +102,5 @@ C#'s Attribute system is a good place to start:
 And that's about it
 
 ## Last words
+
 I like the idea conceptually, but honestly I don't have the time or energy to work on it.
