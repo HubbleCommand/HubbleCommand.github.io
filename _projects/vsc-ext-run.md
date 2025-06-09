@@ -6,11 +6,12 @@ categories  : []
 programming-languages: ["Javascript", "TypeScript"]
 icons       : ["vscode", "typescript", "javascript"]
 start-date  : 2024-01-13
-last_modified_at: 2024-08-02
+last_modified_at: 2025-06-09
 active: true
 ---
 
 > After a few months, the extension has recently passed 10'000 installs! (2024-08)
+> After about a year, we're past 40'000! (2025-05)
 
 [ext-url]: https://marketplace.visualstudio.com/items?itemName=hcommand.run-runner
 [![Ratings Badge](https://img.shields.io/vscode-marketplace/v/hcommand.run-runner.svg)][ext-url]
@@ -189,3 +190,27 @@ const drawDiagram = async function (stats) {
 	graph LR
     A --- B
 </div>
+
+## Release 1.1.0 - settings & better packaging
+
+Following a [feature request](https://github.com/HubbleCommand/run/issues/3), I added some extra settings to the extension.
+
+However, before publishing, I went and updating my packages.
+This time around, VSEC gave an output of what files were included, and the size.
+
+I was sort of appaled by the 1MB+ size of a miniscule extension, so I removed what I could.
+Lo and behold, the extension is now a reasonable size: 20 odd kilobytes.
+
+Not bad, not bad.
+
+<table>
+	<tbody>
+		<tr>
+			<td><img src="/assets/images/vscodeignore_unclean.png"></td>
+			<td><img src="/assets/images/vscodeignore_clean.png"></td>
+		</tr>
+	</tbody>
+	<caption>
+		vsec outputs when packaging with different .vscodeignore settings
+	</caption>
+</table>
