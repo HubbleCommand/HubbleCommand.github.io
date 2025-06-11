@@ -166,6 +166,7 @@ You can disable the editor scrolling past the end of a file with the setting `ed
 - [VRoid Studio](https://www.youtube.com/watch?v=p8xQ0waBwPo) never used
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) Very good tool to download videos from [hundreds of different sources](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
 - [Photopea](https://www.photopea.com/)[a](https://www.youtube.com/watch?v=7tfiP8Wd1pw) free online photoshop clone
+- [hoppscotch](https://github.com/hoppscotch/hoppscotch) and alternative to [Postman](https://www.postman.com/product/what-is-postman/)
 
 ## Services
 
