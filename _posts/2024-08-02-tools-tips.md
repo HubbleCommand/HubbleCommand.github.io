@@ -152,6 +152,9 @@ You can disable the editor scrolling past the end of a file with the setting `ed
 
 - [musikerkennung](https://musikerkennung.com/en/) music recognition tool that I've had the best luck with
 
+[Taiga](https://taiga.io/) is a good tool for project management.
+It's an open source, self-hostable, better version of Jira & GitHub issues.
+
 ## Apps
 
 - [Audacity](https://www.audacityteam.org/)
