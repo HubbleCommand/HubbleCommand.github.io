@@ -144,6 +144,8 @@ Regex code to delete all instances of a specific tag, including their content
 
 You can disable the editor scrolling past the end of a file with the setting `editor.scrollBeyondLastLine : false`
 
+Auto format with `Ctrl + Shift + P` or with ths shortcut `Shift + Alt + F`.
+
 ## Android Studio
 
 `Ctrl + Alt + L` auto formats code
