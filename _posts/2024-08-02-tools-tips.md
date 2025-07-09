@@ -55,6 +55,8 @@ Adds great tools like [7Zip](https://7-zip.org/).
     - Show snap layouts when I hover over a window's maximise button
     - Show my snapped windows when I hover oiver taskbar apps, in Task View, and when I press ALt+Tab
 
+- Disable Recent Files: this should not be turned on by default, but you can disable it in the File Explorer woth `See More` -> `Options`, and uncheck `Show Recently Used Files` as well as `Show Recently Used Folders`. 
+
 ## XML
 
 You can import an XML file into another XML file with the [entity tag](https://www.w3.org/TR/REC-xml/#sec-external-ent). Import the file with `<!ENTITY otherFile SYSTEM "otherFile.xml">`, then reference it with `&otherFile;`:
@@ -85,6 +87,14 @@ https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
 https://github.com/desktop/desktop/issues/18225
 https://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf
 
+## Managing multiple accounts
+
+While GitHub in the browser [supports account switching](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/switching-between-accounts),
+this feature is not available in GitHub desktop
+(even though a [proposal exists](https://github.com/desktop/desktop/issues/3707)).
+
+However, GitHub CLI _does_ offer account switching through profiles.
+But this doesn't allow you to commit or push... so not very useful.
 
 ## Ubuntu Commands
 
