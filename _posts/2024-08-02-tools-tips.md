@@ -186,6 +186,7 @@ It's an open source, self-hostable, better version of Jira & GitHub issues.
 - [jsDelivr](https://www.jsdelivr.com/?docs=gh) very good & simple CDN for JS libs.
 - [devicon](https://devicon.dev/) A VERY useful resource that contains hundreds of development-related icons, such as for programming languages
 - [shields.io](https://shields.io/) Very nice to make status badges
+- [Firefox Relay](https://support.mozilla.org/en-US/kb/activate-firefox-relay-mask-your-email-address) email mask
 
 ## Text Formatters
 
