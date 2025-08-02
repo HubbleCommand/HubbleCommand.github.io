@@ -2,7 +2,7 @@
 layout: post
 title: "Game Engines"
 date: 2021-08-15
-last_modified_at: 2025-01-29
+last_modified_at: 2025-08-02
 ---
 
 > I originally preferred Flax to Godot, and honestly I think they're both great engines.
@@ -12,6 +12,8 @@ last_modified_at: 2025-01-29
 > 2024-11-22: added frameworks & defold
 
 > 2024-12-01: added tutorial link for defold
+
+> 2028-08-02: raylib iOS support won't be official
 
 # TL;DR
 
@@ -171,7 +173,8 @@ If you want to learn more about game programming, it's a great way to get starte
 You can do a lot with it, as someone was able to [make a 3D engine in it](https://medium.com/@btco_code/writing-a-retro-3d-fps-engine-from-scratch-b2a9723e6b06).
 
 
-## MonoGame
+## [MonoGame](https://monogame.net/)
+
 [While not dead](https://community.monogame.net/t/monogame-status-and-community-perception/19255/12)... it is for all intents and purposes.
 
 It's more of a rendering framework.
@@ -184,9 +187,14 @@ While mangeable, the problem is the amount of work even Google has had to put in
 See how Android uses a custom JVM, and the amount of work that takes.
 
 
-## RayLib
+## [raylib](https://www.raylib.com/)
+
 raylib's major drawback is a lack of iOS support, although [work has started on it](https://github.com/raysan5/raylib/pull/3880).
-It's a very interesting, lightweight engine, that is also the base of anothe engine I like: [ShapeEngine](https://github.com/DaveGreen-Games/ShapeEngine).
+
+* As of July 2025, raysan won't continue this, as architecturally it doesn't fit.
+	It is apparently possible to do it yourself, though.
+
+It's a very interesting, lightweight engine, that is also the base of another engine I like: [ShapeEngine](https://github.com/DaveGreen-Games/ShapeEngine).
 
 
 ## [SDL](https://www.libsdl.org/)
