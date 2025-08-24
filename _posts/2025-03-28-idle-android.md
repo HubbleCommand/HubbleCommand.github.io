@@ -315,6 +315,39 @@ So I ain't bothering.
 
 For now.
 
+## Android Floating Window Framework
+
+Something that is much, much easier than Widgets are Floating Windows.
+While there are recommendations you should follow, there is basically no limits, it's a world of difference.
+Hell, you can even play audio!
+Of course, you also run the risk of completely soft-locking users out of their device if you aren't careful, so keep that in mind.
+
+Strangely enough, this seems to be one of the only APIs that I can't find very good official documentation for, so here are some I've found:
+- [GfG floating window](https://www.geeksforgeeks.org/how-to-make-a-floating-window-application-in-android/)
+- [GitHub sample](https://github.com/luiisca/floating-views)
+- [SO question](https://stackoverflow.com/questions/11443820/floating-widget-overlay-on-android-launcher)
+
+As I said before, there's really no limits.
+Notably, unlike Widgets, you can use any View you want.
+This means that I can simply re-use other Canvas views that I created before for the wallpaper.
+All you have to do is add them in the relevant XML file!
+
+Floating Windows work similarly to Wallpaper and Dreams, and you have to create a service in the `AndroidManifest`:
+
+```
+<application>
+    ...
+    <service
+            android:name=".IcarusFloatingWindowService"
+            android:enabled="true"
+            android:exported="false" />
+    ...
+<application>
+```
+
+Then, I created a helper service to be able to inflate layouts.
+At some point, I'll see about having built-in resizing, but that'll be for another day.
+
 ## What's next
 
 This post is already long enough, and covers the large sweeps of what I did with my mini wallpaper framework.
