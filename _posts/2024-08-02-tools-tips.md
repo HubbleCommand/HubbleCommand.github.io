@@ -228,6 +228,7 @@ It's an open source, self-hostable, better version of Jira & GitHub issues.
 - [FreeStockTextures](https://freestocktextures.com/) as it's name implies, a collection of free stock textures (and images, photos, etc)
 - [GameDevMarket](https://www.gamedevmarket.net/asset/space-shooter-1-5280)
 - [OpenGameArg](https://opengameart.org) collection of open-source game art
+- [Pixabay](https://pixabay.com/) for images and audio
 - [bensound](https://www.bensound.com/)
 - [AudioLibraryFreeMusic](https://www.youtube.com/@AudioLibraryFreeMusic)
 - [1001freefonts](https://www.1001freefonts.com/retro-fonts-5.php)
