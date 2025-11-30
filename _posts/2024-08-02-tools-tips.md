@@ -44,6 +44,8 @@ README best practices
 [Scoop](https://scoop.sh/) is an incredibly useful command-line installer for Windows.
 Adds great tools like [7Zip](https://7-zip.org/).
 
+- Moving Window between screens: `Windows Key` + `Shift` + Left/Right arrow keys
+
 - Moving Windows: `Alt` + `Space` followed by `M`.
   This will move your mouse so that you can move a window with the top bar.
   Then, just move your mouse until the application comes into view.
