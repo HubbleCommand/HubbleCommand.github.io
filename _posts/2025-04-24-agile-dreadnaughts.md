@@ -2,7 +2,10 @@
 layout: post
 title: "Agile vs French Dreadnaughts"
 date: 2025-04-24
+last_modified_at: 2025-12-05
 ---
+
+> 2025-12-05: added another Ed Nash video
 
 In december of '24, a business-side peer of mine asked me how he could fix two problems in his agile teams:
 - Address the distributed nature of the team
@@ -50,6 +53,13 @@ boy do I have news for you...
 <div style="width: 100%; display: flex;">
 	<iframe style="flex: 1; margin: 2px;" height="400" src="https://www.youtube.com/embed/VIiOy6zisu0" frameborder="0" allowfullscreen></iframe>
 	<iframe style="flex: 1; margin: 2px;" height="400" src="https://www.youtube.com/embed/yS-h5Q2QroQ" frameborder="0" allowfullscreen></iframe>
+</div>
+
+And another gripe is how we assume so many things to be axiomatic.
+Many of ours assumptions end up being wrong.
+
+<div style="width: 100%; display: flex;">
+	<iframe style="flex: 1; margin: 2px;" height="400" src="https://www.youtube.com/embed/f9fMsO68mMk" frameborder="0" allowfullscreen></iframe>
 </div>
 
 Another thing that drives me *nuts* is how Agile has been bastardized: it's been taken over by management.
