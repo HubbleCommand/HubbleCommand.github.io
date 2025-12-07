@@ -54,6 +54,10 @@ My last option was to just make it from scratch, which didn't seem *too* hard as
 The [WallpaperService](https://developer.android.com/reference/android/service/wallpaper/WallpaperService)
 is fairly well documented, although there isn't too much online about it.
 
+- [Android Live Wallpaper - Tutorial](https://www.vogella.com/tutorials/AndroidLiveWallpaper/article.html)
+- [gist iangilman/MyLWPService.java](https://gist.github.com/iangilman/71650d46384a2d4ae6387f2d4087cc37)
+- [pallax-android](https://github.com/patzly/pallax-android/blob/master/app/src/main/java/com/patrickzedler/pallax/service/LiveWallpaperService.java)
+
 Weighing my options, I went and started something from scratch.
 
 ## Android Wallpaper Framework
@@ -138,6 +142,11 @@ Without this, the thread can live outside the context of the Wallpaper, and lead
 So I simply interrupt the thread when visibility of the surface changes.
 
 > Note that catching an `InterruptedException` will remove the interrupt tag / mark, meaning that subsequent checks to `Thread.interrupted()` will be false (or won't be called depending on how you catch it)
+
+> Slight tangent, why Thread instead of something like Runnable or Handler?
+  The main thing is that Runnable is an interface, while Thread is a class.
+  Extending Thread allows you to extend or implement other classes, so is more flexible.
+  The big difference would be interrupts, look into [Handler's .close()](https://docs.oracle.com/javase/8/docs/api/java/util/logging/Handler.html#close--).
 
 #### If issues persist
 
