@@ -258,6 +258,7 @@ Also free.
 - [pixeldudesmaker](https://0x72.itch.io/pixeldudesmaker)
 - [blockbench](https://www.blockbench.net/)
 - [smack studio](https://smackstudio.com/characters/) game with very good pixel art & animation tools
+- [MagicaVoxel](https://ephtracy.github.io/) tool for making voxel art or assets
 
 ### AI assisted creation
 
