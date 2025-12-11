@@ -2,7 +2,7 @@
 layout: post
 title: "Tools & Tips"
 date: 2024-08-02
-last_modified_at: 2025-04-05
+last_modified_at: 2025-12-11
 ---
 
 This is going to be an ongoing list of useful tools I've found & use.
@@ -168,6 +168,9 @@ Auto format with `Ctrl + Shift + P` or with ths shortcut `Shift + Alt + F`.
 
 [Taiga](https://taiga.io/) is a good tool for project management.
 It's an open source, self-hostable, better version of Jira & GitHub issues.
+
+[Affinity](https://www.affinity.studio/) is for graphic design, photo editing, and page layout.
+Also free.
 
 ## Apps
 
