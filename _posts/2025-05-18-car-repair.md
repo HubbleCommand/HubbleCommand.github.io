@@ -16,6 +16,12 @@ Both of us just drove off after filling out an accident form.
 My car kept going, no issues, so I didn't think too much of it.
 
 I brought it into a garage at one point, and they said that it's fine, so I just kept chugging it along.
+I was mostly impressed by the fact that both the AC and engine cooling were still working given the state of the radiators:
+
+<figure>
+	<img style="display: block; margin-left: auto; margin-right: auto; height: 350px; transform: rotate(-90deg);" src="/assets/2025-05-18-car-repair/broken.jpg">
+	<figcaption style="text-align: center;">Bent rads</figcaption>
+</figure>
 
 *However*, in November, I brought it in for a general checkup, and the damned thing was overheating just getting out of their lot.
 I brough it back, and they said don't worry, it's fine!

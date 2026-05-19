@@ -54,6 +54,10 @@ My last option was to just make it from scratch, which didn't seem *too* hard as
 The [WallpaperService](https://developer.android.com/reference/android/service/wallpaper/WallpaperService)
 is fairly well documented, although there isn't too much online about it.
 
+- [Android Live Wallpaper - Tutorial](https://www.vogella.com/tutorials/AndroidLiveWallpaper/article.html)
+- [gist iangilman/MyLWPService.java](https://gist.github.com/iangilman/71650d46384a2d4ae6387f2d4087cc37)
+- [pallax-android](https://github.com/patzly/pallax-android/blob/master/app/src/main/java/com/patrickzedler/pallax/service/LiveWallpaperService.java)
+
 Weighing my options, I went and started something from scratch.
 
 ## Android Wallpaper Framework
@@ -138,6 +142,11 @@ Without this, the thread can live outside the context of the Wallpaper, and lead
 So I simply interrupt the thread when visibility of the surface changes.
 
 > Note that catching an `InterruptedException` will remove the interrupt tag / mark, meaning that subsequent checks to `Thread.interrupted()` will be false (or won't be called depending on how you catch it)
+
+> Slight tangent, why Thread instead of something like Runnable or Handler?
+  The main thing is that Runnable is an interface, while Thread is a class.
+  Extending Thread allows you to extend or implement other classes, so is more flexible.
+  The big difference would be interrupts, look into [Handler's .close()](https://docs.oracle.com/javase/8/docs/api/java/util/logging/Handler.html#close--).
 
 #### If issues persist
 
@@ -314,6 +323,39 @@ Here are some clock examples as well, although most just use some default update
 So I ain't bothering.
 
 For now.
+
+## Android Floating Window Framework
+
+Something that is much, much easier than Widgets are Floating Windows.
+While there are recommendations you should follow, there is basically no limits, it's a world of difference.
+Hell, you can even play audio!
+Of course, you also run the risk of completely soft-locking users out of their device if you aren't careful, so keep that in mind.
+
+Strangely enough, this seems to be one of the only APIs that I can't find very good official documentation for, so here are some I've found:
+- [GfG floating window](https://www.geeksforgeeks.org/how-to-make-a-floating-window-application-in-android/)
+- [GitHub sample](https://github.com/luiisca/floating-views)
+- [SO question](https://stackoverflow.com/questions/11443820/floating-widget-overlay-on-android-launcher)
+
+As I said before, there's really no limits.
+Notably, unlike Widgets, you can use any View you want.
+This means that I can simply re-use other Canvas views that I created before for the wallpaper.
+All you have to do is add them in the relevant XML file!
+
+Floating Windows work similarly to Wallpaper and Dreams, and you have to create a service in the `AndroidManifest`:
+
+```
+<application>
+    ...
+    <service
+            android:name=".IcarusFloatingWindowService"
+            android:enabled="true"
+            android:exported="false" />
+    ...
+<application>
+```
+
+Then, I created a helper service to be able to inflate layouts.
+At some point, I'll see about having built-in resizing, but that'll be for another day.
 
 ## What's next
 

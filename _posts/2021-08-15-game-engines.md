@@ -2,7 +2,7 @@
 layout: post
 title: "Game Engines"
 date: 2021-08-15
-last_modified_at: 2025-08-02
+last_modified_at: 2025-09-21
 ---
 
 > I originally preferred Flax to Godot, and honestly I think they're both great engines.
@@ -13,7 +13,9 @@ last_modified_at: 2025-08-02
 
 > 2024-12-01: added tutorial link for defold
 
-> 2028-08-02: raylib iOS support won't be official
+> 2025-08-02: raylib iOS support won't be official
+
+> 2025-08-02: comments on Defold
 
 # TL;DR
 
@@ -62,6 +64,12 @@ The absolutely BEST place to start is [Unfolding Gamedev](https://www.youtube.co
 He also gives a good [comparaison between Defold and Godot](https://www.youtube.com/watch?v=3nfs6MNTNDo).
 
 The assets for the Space Shooter tutorial are from [Foozle's Void collection](https://itch.io/c/2713136/void).
+
+## What's wrong
+It's very rough around the edges, with basic things like editor state (ie opened files) not being saved between sessions.
+Even input mapping is done through a list, there is no key listener.
+Also, what you will see become a running theme, is magic strings.
+This makes it incredibly difficult to manage resources and just track *what* magic strings you even have, especially with defold's editor.
 
 
 # #1 [Godot](https://godotengine.org/)

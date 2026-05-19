@@ -2,7 +2,7 @@
 layout: post
 title: "Tools & Tips"
 date: 2024-08-02
-last_modified_at: 2025-04-05
+last_modified_at: 2025-12-11
 ---
 
 This is going to be an ongoing list of useful tools I've found & use.
@@ -43,6 +43,8 @@ README best practices
 
 [Scoop](https://scoop.sh/) is an incredibly useful command-line installer for Windows.
 Adds great tools like [7Zip](https://7-zip.org/).
+
+- Moving Window between screens: `Windows Key` + `Shift` + Left/Right arrow keys
 
 - Moving Windows: `Alt` + `Space` followed by `M`.
   This will move your mouse so that you can move a window with the top bar.
@@ -167,6 +169,9 @@ Auto format with `Ctrl + Shift + P` or with ths shortcut `Shift + Alt + F`.
 [Taiga](https://taiga.io/) is a good tool for project management.
 It's an open source, self-hostable, better version of Jira & GitHub issues.
 
+[Affinity](https://www.affinity.studio/) is for graphic design, photo editing, and page layout.
+Also free.
+
 ## Apps
 
 - [Audacity](https://www.audacityteam.org/)
@@ -228,6 +233,7 @@ It's an open source, self-hostable, better version of Jira & GitHub issues.
 - [FreeStockTextures](https://freestocktextures.com/) as it's name implies, a collection of free stock textures (and images, photos, etc)
 - [GameDevMarket](https://www.gamedevmarket.net/asset/space-shooter-1-5280)
 - [OpenGameArg](https://opengameart.org) collection of open-source game art
+- [Pixabay](https://pixabay.com/) for images and audio
 - [bensound](https://www.bensound.com/)
 - [AudioLibraryFreeMusic](https://www.youtube.com/@AudioLibraryFreeMusic)
 - [1001freefonts](https://www.1001freefonts.com/retro-fonts-5.php)
@@ -252,6 +258,7 @@ It's an open source, self-hostable, better version of Jira & GitHub issues.
 - [pixeldudesmaker](https://0x72.itch.io/pixeldudesmaker)
 - [blockbench](https://www.blockbench.net/)
 - [smack studio](https://smackstudio.com/characters/) game with very good pixel art & animation tools
+- [MagicaVoxel](https://ephtracy.github.io/) tool for making voxel art or assets
 
 ### AI assisted creation
 
